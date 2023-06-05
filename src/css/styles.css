@@ -18,7 +18,7 @@ header {
   height: 10rem;
   justify-content:space-between;
   max-width: 110 rem;
-  background-color: #c4a07f;
+  background-color: #d9a371;
   border-bottom: 1px solid rgb(137, 137, 137);
 }
 
@@ -36,7 +36,7 @@ h1 {
   color: #096ab3;
   font-size: xxx-large;
   font-weight: 900;
-  text-shadow: 2px 2px #f6f481;
+  text-shadow: 3px 3px #f6f481;
   padding-top: 3rem;
   padding-right: 19rem;
 }
