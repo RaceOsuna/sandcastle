@@ -18,13 +18,13 @@ header {
   height: 10rem;
   justify-content: end;
   max-width: 110 rem;
-  background-color: #f4d4b7;
+  background-color: #f6cca5;
   border-bottom: 1px solid rgb(137, 137, 137);
 }
 
 nav {
   display: flex;
-  width: 30rem;
+  width: 35rem;
   justify-content: space-around;
   align-items: center;
 }
@@ -40,11 +40,13 @@ nav {
 /* reusable classes */
 
 .button {
-  background-color: #127bcb;
+  background-color: #f0c528;
   border: 2px solid white;
-  border-color: white;
+  border-color: #096ab3;
   border-radius: 10px;
-  color: white;
+  color: #096ab3;
   height: 3rem;
   width: 10rem;
+  font-weight: 900;
+  font-size: x-large;
 }
