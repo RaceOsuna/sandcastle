@@ -10,7 +10,7 @@ html, body {
   font-family: Arial, sans-serif;
   height: 101%;
   width: auto;
-  background-color: #fdf9b5;
+  background-color: #e8d9bd;
 }
 
 header {
@@ -18,7 +18,7 @@ header {
   height: 10rem;
   justify-content:space-between;
   max-width: 110 rem;
-  background-color: #d9a371;
+  background-color: #2299a7;
   border-bottom: 1px solid rgb(137, 137, 137);
 }
 
@@ -33,10 +33,10 @@ header {
 }
 
 h1 {
-  color: #096ab3;
+  color: #f6f481;
   font-size: xxx-large;
   font-weight: 900;
-  text-shadow: 3px 3px #f6f481;
+  text-shadow: 3px 3px black;
   padding-top: 3rem;
   padding-right: 19rem;
 }
