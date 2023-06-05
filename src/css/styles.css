@@ -24,6 +24,9 @@ header {
 
 nav {
   display: flex;
+  width: 30rem;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /* .header-logo {
@@ -33,3 +36,15 @@ nav {
   width: 12rem;
   animation: mymove 6s infinite linear alternate; 
 } */
+
+/* reusable classes */
+
+.button {
+  background-color: #127bcb;
+  border: 2px solid white;
+  border-color: white;
+  border-radius: 10px;
+  color: white;
+  height: 3rem;
+  width: 10rem;
+}
