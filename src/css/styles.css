@@ -1,3 +1,35 @@
-body {
-  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 1px solid red;
 }
+
+html, body {
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  height: 101%;
+  width: auto;
+  background-color: #fbf6f3;
+}
+
+header {
+  display: flex;
+  height: 10rem;
+  justify-content: end;
+  max-width: 110 rem;
+  background-color: #f4d4b7;
+  border-bottom: 1px solid rgb(137, 137, 137);
+}
+
+nav {
+  display: flex;
+}
+
+/* .header-logo {
+  display: flex;
+  align-items: center ;
+  height: 9rem;
+  width: 12rem;
+  animation: mymove 6s infinite linear alternate; 
+} */
