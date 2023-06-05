@@ -1,20 +1,41 @@
-let user, rooms, bookings
+//let customer, customerData, roomData, bookingData
 
-const customers = fetch('http://localhost:3001/api/v1/customers')
+const customersResponse = fetch('http://localhost:3001/api/v1/customers')
 .then(response => response.json())
-.then(response => console.log(response))
+//.then(response => console.log(response))
 
-const customerBookings = fetch('http://localhost:3001/api/v1/bookings')
+const bookingsResponse = fetch('http://localhost:3001/api/v1/bookings')
 .then(response => response.json())
-.then(response => console.log(response))
+//.then(response => console.log(response))
 
-const hotelRooms = fetch('http://localhost:3001/api/v1/rooms')
+const roomsResponse = fetch('http://localhost:3001/api/v1/rooms')
 .then(response => response.json())
-.then(response => console.log(response))
+//.then(response => console.log(response))
+
+// window.addEventListener('load', () => {
+//   Promise.all([customersResponse, bookingsResponse, roomsResponse]).then(([customers, bookings, rooms]) => {
+  
+//   customerData = customers.customers
+//   bookingData = bookings.bookings
+//   roomData = rooms.rooms
+  
+//   const selectRandomUser = (data) => {
+//     const index = Math.floor(Math.random() * data.length - 1);
+//     const aUser = data[index];
+//     return aUser;
+//   }
+
+//   customer = selectRandomUser(customerData);
+
+//   return customer;
+//   })});
 
 
 export {
-  customers,
-  customerBookings,
-  hotelRooms
+  // customerData,
+  // bookingData,
+  // roomData
+  customersResponse,
+  bookingsResponse,
+  roomsResponse
 }
