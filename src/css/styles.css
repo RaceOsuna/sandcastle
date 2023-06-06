@@ -68,10 +68,6 @@ nav div {
   grid-template-columns: 55% 35%;
 }
 
-.booking {
-  border-right: 2px solid rgb(179, 176, 176);
-}
-
 .grid {
   margin-top: 20Px;
   display: grid;
