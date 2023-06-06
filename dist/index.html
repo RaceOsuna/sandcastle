@@ -6,19 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Webpack Starter Kit</title>
 </head>
-<header>
-  <div role="img" class="logo">
-    <img src="https://images.vexels.com/media/users/3/151953/isolated/preview/daa82256ed2a4477b96b705b4758b3d0-sand-castle-icon.png" alt="sandcastle">
-  </div>
-  <h1>Sandcastle</h1>
-  <nav>
-    <button class="button">Home</button>
-    <button class="button">Book</button>
-    <button class="button">Log Out</button>
-  </nav>
-</header>
 <body>
-  
+  <header class="navbar">
+    <div class="container flex">
+      <h1 class="logo">Sandcastle.</h1>
+      <nav>
+        <div>
+          <button class="nav-btn">Home</button>
+          <button class="nav-btn">Book</button>
+          <button class="nav-btn">Log Out</button>
+        </div>
+      </nav>
+    </div>
+  </header>
   <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->
   <script src="bundle.js"></script>
 
