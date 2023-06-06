@@ -6,19 +6,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Webpack Starter Kit</title>
 </head>
-<header>
-  <div role="img" class="logo">
-    <img src="https://images.vexels.com/media/users/3/151953/isolated/preview/daa82256ed2a4477b96b705b4758b3d0-sand-castle-icon.png" alt="sandcastle">
-  </div>
-  <h1>Sandcastle</h1>
-  <nav>
-    <button class="button">Home</button>
-    <button class="button">Book</button>
-    <button class="button">Log Out</button>
-  </nav>
-</header>
 <body>
-  
+  <header class="navbar">
+    <div class="container flex">
+      <h1 class="logo">Sandcastle.</h1>
+      <nav>
+        <div>
+          <button class="nav-btn home">Home</button>
+          <button class="nav-btn book">Book</button>
+          <button class="nav-btn log-out">Log Out</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <h1 class="greeting">Welcome Race!</h1>
+    <section class="user-bookings">
+      <div class="container grid">
+        <div class="booking">
+          <div>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum quaerat praesentium aspernatur eveniet. Aperiam consectetur, incidunt, iste consequuntur quos facere porro repellat cumque quibusdam repellendus, suscipit dolorem voluptate? Incidunt, natus.
+          </div>
+        </div>
+        <div class="booking-form">
+          <h2>Book a Room!</h2>
+          <form action="">
+            <div>
+              <input type="date" required>
+            </div>
+            <div>
+              <input type="date" required>
+            </div>
+            <div>
+              <input type="Name" required>
+            </div>
+            <div>
+              <input type="number" required>
+            </div>
+            <div>
+              <input type="submit" required>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
   <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->
   <script src="bundle.js"></script>
 

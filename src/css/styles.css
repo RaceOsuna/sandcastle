@@ -1,73 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Poppins:wght@300&display=swap');
+
 * {
   box-sizing: border-box;
-  margin: 0;
   padding: 0;
-  border: 1px solid red;
+  margin: 0;
+  /* border: 1px solid red */
 }
 
-html, body {
-  font-size: 16px;
-  font-family: Arial, sans-serif;
-  height: 101%;
-  width: auto;
-  background-color: #e8d9bd;
-}
-
-header {
-  display: flex;
-  height: 10rem;
-  justify-content:space-between;
-  max-width: 110 rem;
-  background-color: #2299a7;
-  border-bottom: 1px solid rgb(137, 137, 137);
-}
-
-.logo {
-  height: 10rem;
-  width: 10rem;
-}
-
-.logo > img {
-  max-width: 100%;
-  height: auto;
+body {
+  font-family: 'Poppins', sans-serif;
+  color:#45494d;
+  line-height: 1.5;
 }
 
 h1 {
-  color: #f6f481;
-  font-size: xxx-large;
-  font-weight: 900;
-  text-shadow: 3px 3px black;
-  padding-top: 3rem;
-  padding-right: 19rem;
+  font-weight: 300;
+  margin: 10px 0;
+  font-size: xx-large;
 }
 
-nav {
+img {
+  height: 100%;
+  width: 100%;
+}
+
+.navbar {
+  background-color: #047aed;
+  color: #fff;
+  height: 14%;
+  /* height: 70px; */
+}
+
+nav div {
   display: flex;
-  width: 35rem;
-  justify-content: space-around;
+  width: 13rem;
+  justify-content: space-between;
+}
+
+.nav-btn {
+  color: white;
+  background-color: #047aed;
+  border: none;
+  cursor: pointer;
+  margin: 0 1%;
+  font-size: medium;
+}
+
+.nav-btn:hover {
+  border-bottom: 2px solid #fff;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2%;
+  justify-content: space-between;
   align-items: center;
-  align-self: right;
 }
 
-/* .header-logo {
+.greeting {
+  margin: 0 10px;
+  font-size: xx-large;
+  border-bottom: 2px solid rgb(179, 176, 176);
+}
+
+.user-bookings .grid {
+  grid-template-columns: 55% 35%;
+}
+
+.booking {
+  border-right: 2px solid rgb(179, 176, 176);
+}
+
+.grid {
+  margin-top: 20Px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.flex {
   display: flex;
-  align-items: center ;
-  height: 9rem;
-  width: 12rem;
-  animation: mymove 6s infinite linear alternate; 
-} */
-
-/* reusable classes */
-
-.button {
-  /* background-color: #f0c528; */
-  background-color: #f6f481;
-  border: 2px solid white;
-  border-color: #096ab3;
-  border-radius: 10px;
-  color: #096ab3;
-  height: 3rem;
-  width: 10rem;
-  font-weight: 900;
-  font-size: x-large;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
+  
