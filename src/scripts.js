@@ -1,4 +1,4 @@
-import { /*customersResponse, bookingsResponse, roomsResponse*/ customer, bookingData, customerData, promiseAll} from './apiCalls';
+import {customer, bookingData, customerData, promiseAll, roomData} from './apiCalls';
 
 // This is the JavaScript entry file - your code begins here
 // Do not delete or rename this file ********
@@ -10,7 +10,13 @@ import './css/styles.css';
 //import './images/turing-logo.png'
 
 window.addEventListener('load', () => {
-  promiseAll().then(data => console.log(customer))
-
+  promiseAll().then(data => {
+    console.log(customer)
+    console.log(customerData)
+    console.log(bookingData)
+    console.log(roomData)
   });
+});
+
+  
 

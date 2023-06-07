@@ -27,7 +27,7 @@ const roomsResponse = fetch('http://localhost:3001/api/v1/rooms')
 
   customer = selectRandomUser(customerData);
 
-  // return customer;
+  return customer;
   });
 
 
