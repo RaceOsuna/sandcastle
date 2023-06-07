@@ -59,14 +59,14 @@ nav div {
 .user-bookings .grid {
   grid-template-columns: 65% 30%;
   height: 85vh;
-  border: 1px solid red;
 }
 
 .bkngs {
   display: grid;
+  background-color: #e5caa8;
   grid-template-columns: 33% 33% 33%;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 20px;
   justify-content: center;
   align-items: center;
   padding: 2% 2%;
@@ -75,6 +75,12 @@ nav div {
   overflow: scroll;
   border-top: 1px solid #bed4ea;
   box-shadow: 0 10px 10px black;
+}
+
+.bkngs div {
+  background-color: #fff;
+  padding: 1% 1%;
+  border: 1px solid black
 }
 
 /* .bkngs {
