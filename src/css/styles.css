@@ -14,7 +14,7 @@ body {
 }
 
 h1 {
-  font-weight: 300;
+  font-weight: 400;
   margin: 10px 0;
   font-size: xx-large;
 }
@@ -52,8 +52,11 @@ nav div {
 
 .greeting {
   margin: 0 10px;
-  font-size: xx-large;
   border-bottom: 2px solid rgb(179, 176, 176);
+}
+
+.dollars {
+  font-size: x-large;
 }
 
 .user-bookings .grid {
@@ -108,7 +111,7 @@ nav div {
   gap: 30px;
 }
 
-h2 {
+.form-header {
   align-self: center;
   font-size: xx-large;
 }

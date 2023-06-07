@@ -1,6 +1,6 @@
 import {customer, bookingData, customerData, promiseAll, roomData} from './apiCalls';
 
-import { displayCustomerBookings } from './domUpdates';
+import { displayCustomerBookings, displayTotalAmountSpent } from './domUpdates';
 // This is the JavaScript entry file - your code begins here
 // Do not delete or rename this file ********
 
@@ -17,6 +17,8 @@ window.addEventListener('load', () => {
     console.log(bookingData)
     console.log(roomData)
     displayCustomerBookings()
+    displayTotalAmountSpent()
+    
   });
 });
 

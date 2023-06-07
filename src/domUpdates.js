@@ -1,4 +1,4 @@
-import { getCustomerBookings } from "./dataMethods";
+import { getCustomerBookings, getTotalAmountSpent } from "./dataMethods";
 import { customer, customerData, bookingData, roomData } from "./apiCalls";
 
 const displayCustomerBookings = () => {
@@ -16,4 +16,10 @@ const displayCustomerBookings = () => {
   })
 }
 
-export {displayCustomerBookings}
+const displayTotalAmountSpent = () => {
+  const total = getTotalAmountSpent(customer, bookingData, roomData)
+  const dollars = document.querySelector('.dollars')
+  dollars.innerText = `ATM: $${total}`
+}
+
+export {displayCustomerBookings, displayTotalAmountSpent}
