@@ -66,15 +66,15 @@ nav div {
 
 .bkngs {
   display: grid;
-  background-color: #e5caa8;
+  background-color: #e3bc8c;
   grid-template-columns: 33% 33% 33%;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   justify-content: center;
   align-items: center;
   padding: 2% 2%;
-  height: 32rem;
-  /* height: 600px; */
+  /* height: 32rem; */
+  height: 500px;
   overflow: scroll;
   border-top: 1px solid #bed4ea;
   box-shadow: 0 10px 10px black;
@@ -96,7 +96,7 @@ nav div {
 } */
 
 .card {
-  background-color: #eeee70;
+  background-color: #fbdd4a;
   border-radius: 10px;
   box-shadow: 0 10px 10px black;
   width: 100%;
