@@ -1,4 +1,4 @@
-const rooms = [
+const roomData = [
   {
   "number": 1,
   "roomType": "residential suite",
@@ -201,4 +201,4 @@ const rooms = [
   }
   ]
 
-  export {rooms}
+  export {roomData}
