@@ -131,6 +131,6 @@ const bookingData = [
 "date": "2023/11/28",
 "roomNumber": 9
 },
-]
+];
 
 export {bookingData}

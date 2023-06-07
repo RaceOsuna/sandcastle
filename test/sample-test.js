@@ -10,10 +10,6 @@ import { getCustomerBookings } from '../src/dataMethods';
 // const {roomData} = require('../src/data/mockRooms')
 // const {bookingData} = require('../src/data/mockBookings')
 
-// const bookings = bookingData
-// const rooms = roomData
-// const customers = customerData
-
 describe('Get user bookings', () => {
   it('Should return all bookings that include the customer ID', () => {
     
