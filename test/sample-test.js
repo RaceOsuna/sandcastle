@@ -74,3 +74,4 @@ describe('Get user bookings', () => {
 
     expect(customerBookings2).to.deep.equal([])
   })
+});
