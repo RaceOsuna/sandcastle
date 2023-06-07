@@ -1,6 +1,11 @@
 import { getCustomerBookings, getTotalAmountSpent } from "./dataMethods";
 import { customer, customerData, bookingData, roomData } from "./apiCalls";
 
+const displayCustomerName = () => {
+  const welcome = document.querySelector('.welcome')
+  welcome.innerText += `Welcome ${customer.name.split(' ')[0]}!`
+}
+
 const displayCustomerBookings = () => {
   const bookings = getCustomerBookings(customer, bookingData)
   const bookingsSection = document.querySelector('.bkngs')
@@ -22,4 +27,4 @@ const displayTotalAmountSpent = () => {
   dollars.innerText = `ATM: $${total}`
 }
 
-export {displayCustomerBookings, displayTotalAmountSpent}
+export {displayCustomerBookings, displayTotalAmountSpent, displayCustomerName}
