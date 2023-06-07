@@ -1,4 +1,4 @@
-const customerData = [
+const mockCustomerData = [
   {
   "id": 1,
   "name": "Leatha Ullrich"
@@ -46,4 +46,4 @@ const customerData = [
 ];
 
 
-export {customerData}
+export {mockCustomerData}

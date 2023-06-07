@@ -30,6 +30,9 @@ const roomsResponse = fetch('http://localhost:3001/api/v1/rooms')
   return customer;
   });
 
+  const log = () => {console.log(customer)}
+  setTimeout(log, 4000)
+
 
 export {
   promiseAll,

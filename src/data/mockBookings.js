@@ -1,4 +1,4 @@
-const bookingData = [
+const mockBookingData = [
   {
 "id": "5fwrgu4i7k55hl6t8",
 "userID": 1,
@@ -133,4 +133,4 @@ const bookingData = [
 },
 ];
 
-export {bookingData}
+export {mockBookingData}
