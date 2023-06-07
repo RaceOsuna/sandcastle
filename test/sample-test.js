@@ -1,8 +1,6 @@
 import chai from 'chai';
 const expect = chai.expect;
-import { customerData } from '../src/data/mockCustomers';
-import { roomData } from '../src/data/mockRooms';
-import { bookingData } from '../src/data/mockBookings';
+
 
 import { getCustomerBookings } from '../src/dataMethods';
 
@@ -76,4 +74,3 @@ describe('Get user bookings', () => {
 
     expect(customerBookings2).to.deep.equal([])
   })
-});
