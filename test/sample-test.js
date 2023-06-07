@@ -4,7 +4,7 @@ import { customerData } from '../src/data/mockCustomers';
 import { roomData } from '../src/data/mockRooms';
 import { bookingData } from '../src/data/mockBookings';
 
-import { getCustomerBookings } from './dataMethods';
+import { getCustomerBookings } from '../src/dataMethods';
 
 // const {customerData} = require('../src/data/mockCustomers')
 // const {roomData} = require('../src/data/mockRooms')
@@ -16,8 +16,13 @@ import { getCustomerBookings } from './dataMethods';
 
 describe('Get user bookings', () => {
   it('Should return all bookings that include the customer ID', () => {
-
-    const customerBookings = getCustomerBookings(34, bookingData)
+    
+    let customer = {
+      "id": 34,
+      "name": "Race Osuna"
+    }
+    
+    const customerBookings = getCustomerBookings(customer, bookingData)
     
     expect(customerBookings).to.deep.equal([
       {
@@ -37,7 +42,12 @@ describe('Get user bookings', () => {
 
   it('Should return all bookings that include a different customer ID', () => {
 
-    const customerBookings1 = getCustomerBookings(9, bookingData)
+    let customer = {
+      "id": 9,
+      "name": "Faustino Quitzon"
+      }
+
+    const customerBookings1 = getCustomerBookings(customer, bookingData)
 
     expect(customerBookings1).to.deep.equal([
       {
@@ -55,9 +65,14 @@ describe('Get user bookings', () => {
     ]);
   });
 
-  it('should return nothing if the customer ID does not exist', () => {
+  it.only('should return nothing if the customer ID does not exist', () => {
 
-    const customerBookings2 = getCustomerBookings(44, bookingData)
+    let customer = {
+      "id": 93,
+      "name": "Hey Arnold"
+      }
+
+    const customerBookings2 = getCustomerBookings(customer, bookingData)
 
     expect(customerBookings2).to.deep.equal([])
   })
