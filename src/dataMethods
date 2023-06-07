@@ -1,5 +1,18 @@
-const getCustomerBookings = (customer, data) => {
-  return data.filter((booking) => booking.userID === customer.id)
+const getCustomerBookings = (customer, bookingData) => {
+  return bookingData.filter((booking) => booking.userID === customer.id)
 }
 
-export {getCustomerBookings}
+const getTotalAmountSpent = (customer, bookingData, roomData) => {
+  const totalSpent = bookingData.filter((booking) => booking.userID === customer.id)
+    .reduce((acc, booking) => {
+      roomData.forEach((room) => {
+        if (booking.roomNumber === room.number) {
+          acc += room.costPerNight
+        }
+      })
+      return acc
+    }, 0)
+    return totalSpent.toFixed(2)
+}
+
+export {getCustomerBookings, getTotalAmountSpent}
