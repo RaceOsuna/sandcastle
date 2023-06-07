@@ -1,0 +1,5 @@
+const getCustomerBookings = (customer, data) => {
+  return data.filter((booking) => booking.userID === customer.id)
+}
+
+export {getCustomerBookings}
