@@ -4,13 +4,9 @@ const expect = chai.expect;
 
 import { getCustomerBookings } from '../src/dataMethods';
 
-// const {customerData} = require('../src/data/mockCustomers')
-// const {roomData} = require('../src/data/mockRooms')
-// const {bookingData} = require('../src/data/mockBookings')
-
-// const bookings = bookingData
-// const rooms = roomData
-// const customers = customerData
+const {customerData} = require('../src/data/mockCustomers')
+const {roomData} = require('../src/data/mockRooms')
+const {bookingData} = require('../src/data/mockBookings')
 
 describe('Get user bookings', () => {
   it('Should return all bookings that include the customer ID', () => {
