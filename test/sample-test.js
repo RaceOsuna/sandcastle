@@ -2,7 +2,7 @@ import chai from 'chai';
 const expect = chai.expect;
 
 
-import { getCustomerBookings } from '../src/dataMethods';
+import { getCustomerBookings, getTotalAmountSpent } from '../src/dataMethods';
 
 const {mockCustomerData} = require('../src/data/mockCustomers')
 const {mockRoomData} = require('../src/data/mockRooms')
@@ -63,11 +63,50 @@ describe('Get user bookings', () => {
 
     let customer = {
       "id": 93,
-      "name": "Hey Arnold"
+      "name": "Otto Rocket"
       }
 
     const customerBookings2 = getCustomerBookings(customer, mockBookingData)
 
     expect(customerBookings2).to.deep.equal([])
+  })
+});
+
+describe('get total amount spent', () => {
+  it('Should return a customers total amount spent on rooms all time', () => {
+    
+    let customer = {
+      "id": 9,
+      "name": "Faustino Quitzon"
+      } 
+
+    const total = getTotalAmountSpent(customer, mockBookingData, mockRoomData)
+
+    expect(total).to.equal('631.16')
+  });
+
+  it('Should return another customers total amount spent on rooms all time', () => {
+    
+    let customer = {
+      "id": 34,
+      "name": "Race Osuna"
+    } 
+
+    const total1 = getTotalAmountSpent(customer, mockBookingData, mockRoomData)
+
+    expect(total1).to.equal('528.54')
+  });
+
+  it('Should return 0 if the customer id does not exist', () => {
+    
+    let customer = {
+      "id": 93,
+      "name": "Louis Stevens"
+      }
+
+      const total2 = getTotalAmountSpent(customer, mockBookingData, mockRoomData)
+
+      expect(total2).to.equal('0.00')
+
   })
 });
