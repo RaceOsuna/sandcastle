@@ -1,3 +1,5 @@
+import { displayCustomerName, displayTotalAmountSpent, displayCustomerBookings } from "./domUpdates"
+
 let customer, customerData, roomData, bookingData
 
 const customersResponse = fetch('http://localhost:3001/api/v1/customers')
@@ -12,8 +14,8 @@ const roomsResponse = fetch('http://localhost:3001/api/v1/rooms')
 .then(response => response.json())
 
 
-
-  const promiseAll = () => Promise.all([customersResponse, bookingsResponse, roomsResponse]).then(([customers, bookings, rooms]) => {
+window.addEventListener('load', () => {
+Promise.all([customersResponse, bookingsResponse, roomsResponse]).then(([customers, bookings, rooms]) => {
   
   customerData = customers.customers
   bookingData = bookings.bookings
@@ -27,15 +29,19 @@ const roomsResponse = fetch('http://localhost:3001/api/v1/rooms')
 
   customer = selectRandomUser(customerData);
 
+  displayCustomerName()
+  displayCustomerBookings()
+  displayTotalAmountSpent()
+
   return customer;
   });
+});
 
   const log = () => {console.log(customer)}
   setTimeout(log, 4000)
 
 
 export {
-  promiseAll,
   customer,
   customerData,
   bookingData,
