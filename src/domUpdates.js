@@ -1,5 +1,6 @@
-import { getCustomerBookings, getTotalAmountSpent } from "./dataMethods";
+import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate } from "./dataMethods";
 import { customer, customerData, bookingData, roomData } from "./apiCalls";
+import { selectedDate } from "./scripts";
 
 const displayCustomerName = () => {
   const welcome = document.querySelector('.welcome')
@@ -27,4 +28,15 @@ const displayTotalAmountSpent = () => {
   dollars.innerText = `ATM: $${total}`
 }
 
-export {displayCustomerBookings, displayTotalAmountSpent, displayCustomerName}
+const displayFilteredRooms = () => {
+  const formattedDate = selectedDate.value.replaceAll('-', '/')
+  console.log(formattedDate)
+  const allRooms = filterRoomsByDate(formattedDate, roomData, bookingData)
+  console.log(typeof(bookingData[5]))
+  console.log(bookingData[5].date)
+  console.log(allRooms)
+  return allRooms
+}
+
+
+export {displayCustomerBookings, displayTotalAmountSpent, displayCustomerName, displayFilteredRooms}

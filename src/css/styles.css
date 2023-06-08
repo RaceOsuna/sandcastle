@@ -76,6 +76,7 @@ nav div {
   /* height: 32rem; */
   height: 500px;
   overflow: scroll;
+  scroll-behavior: smooth;
   border-top: 1px solid #bed4ea;
   box-shadow: 0 10px 10px black;
 }

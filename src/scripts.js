@@ -1,5 +1,6 @@
 import {customer, bookingData, customerData, roomData} from './apiCalls';
 
+import { displayFilteredRooms } from './domUpdates';
 // This is the JavaScript entry file - your code begins here
 // Do not delete or rename this file ********
 
@@ -11,14 +12,23 @@ import './css/styles.css';
 
 const form = document.querySelector('.booking-form')
 const selectedDate = document.querySelector('.date')
+// const submitForm = () => {
+//   event.preventDefault()
+//   const formatDate = selectedDate.value.replaceAll('-', '/')
+//   console.log('hello')
+// }
 
-const submitForm = (event) => {
+// const formattedDate = selectedDate.addEventListener('input', () => {
+//   console.log(selectedDate.value)
+// })
+
+form.addEventListener('submit', (event) => {
   event.preventDefault()
-  const formatDate = selectedDate.value.replaceAll('-', '/')
-  console.log(formatDate)
-}
-
-form.addEventListener('submit',submitForm)
+  console.log(typeof(selectedDate.value))
+  displayFilteredRooms()
+  // console.log('hello')
+  // submitForm()
+})
 
   
-
+export {selectedDate}
