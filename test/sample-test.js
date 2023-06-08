@@ -114,9 +114,9 @@ describe('get total amount spent', () => {
 describe('Filter rooms by date', () => {
   it('Should return only rooms that are not booked on given date', () => {
     
-    let dateValue = '2023/02/19'
+    let dateValue = "2023/12/10"
 
-    const filteredRooms = filterRoomsByDate(dateValue, mockRoomData, mockBookingData)
+    const filteredRooms = filterRoomsByDate(mockBookingData, mockRoomData, dateValue)
 
     expect(filteredRooms).to.deep.equal([
       {
@@ -134,6 +134,14 @@ describe('Filter rooms by date', () => {
         bedSize: 'full',
         numBeds: 2,
         costPerNight: 477.38
+      },
+      {
+        number: 3,
+        roomType: 'single room',
+        bidet: false,
+        bedSize: 'king',
+        numBeds: 1,
+        costPerNight: 491.14
       },
       {
         number: 4,
@@ -190,14 +198,6 @@ describe('Filter rooms by date', () => {
         bedSize: 'twin',
         numBeds: 1,
         costPerNight: 497.64
-      },
-      {
-        number: 11,
-        roomType: 'single room',
-        bidet: true,
-        bedSize: 'twin',
-        numBeds: 2,
-        costPerNight: 207.24
       },
       {
         number: 12,
@@ -316,9 +316,9 @@ describe('Filter rooms by date', () => {
 
   it('Should filter rooms for any given date', () => {
     
-    let dateValue = '2023/11/28'
+    let dateValue = "2022/02/03"
 
-    const filteredRooms1 = filterRoomsByDate(dateValue, mockRoomData, mockBookingData)
+    const filteredRooms1 = filterRoomsByDate(mockBookingData, mockRoomData, dateValue)
 
     expect(filteredRooms1).to.deep.equal([
       {
@@ -386,6 +386,14 @@ describe('Filter rooms by date', () => {
         costPerNight: 261.26
       },
       {
+        number: 9,
+        roomType: 'single room',
+        bidet: true,
+        bedSize: 'queen',
+        numBeds: 1,
+        costPerNight: 200.39
+      },
+      {
         number: 10,
         roomType: 'suite',
         bidet: false,
@@ -440,14 +448,6 @@ describe('Filter rooms by date', () => {
         bedSize: 'full',
         numBeds: 2,
         costPerNight: 325.6
-      },
-      {
-        number: 17,
-        roomType: 'junior suite',
-        bidet: false,
-        bedSize: 'twin',
-        numBeds: 2,
-        costPerNight: 328.15
       },
       {
         number: 18,
