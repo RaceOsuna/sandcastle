@@ -30,9 +30,9 @@ const displayTotalAmountSpent = () => {
 
 const displayFilteredRooms = () => {
   const formattedDate = selectedDate.value.replaceAll('-', '/')
-  const allRooms = filterRoomsByDate(formattedDate, bookingData, roomData)
-  console.log(allRooms)
-  return allRooms
+  const availableRooms = filterRoomsByDate(bookingData, roomData, formattedDate)
+  console.log(availableRooms)
+  return availableRooms
 }
 
 
