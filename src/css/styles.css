@@ -134,6 +134,7 @@ nav div {
 
 .available-section {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   border: 1px solid red;
@@ -146,6 +147,17 @@ nav div {
   gap: 20px;
   width: 80%;
   /* border: 1px solid red; */
+}
+
+.room-filter {
+  display: flex;
+  align-self: flex-start;
+  margin: 2% 2%;
+  width: 15%
+}
+
+select {
+  height: 30px;
 }
 
 .room {
