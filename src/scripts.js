@@ -10,10 +10,12 @@ import './css/styles.css';
 //import './images/turing-logo.png'
 
 const form = document.querySelector('.booking-form')
+const selectedDate = document.querySelector('.date')
 
 const submitForm = (event) => {
   event.preventDefault()
-  console.log('hello')
+  const formatDate = selectedDate.value.replaceAll('-', '/')
+  console.log(formatDate)
 }
 
 form.addEventListener('submit',submitForm)
