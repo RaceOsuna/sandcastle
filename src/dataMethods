@@ -15,4 +15,15 @@ const getTotalAmountSpent = (customer, bookingData, roomData) => {
     return totalSpent.toFixed(2)
 }
 
-export {getCustomerBookings, getTotalAmountSpent}
+const filterRoomsByDate = (date, rooms, bookings) => {
+  return rooms.reduce((acc, room) => {
+    bookings.forEach((booking) => {
+      if (!booking.date.includes(date) && booking.roomNumber === room.number && !acc.includes(room)) {
+        acc.push(room)
+      }
+    })
+    return acc
+  }, [])
+}
+
+export {getCustomerBookings, getTotalAmountSpent, filterRoomsByDate}
