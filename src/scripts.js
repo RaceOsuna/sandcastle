@@ -12,10 +12,6 @@ import './css/styles.css';
 
 window.addEventListener('load', () => {
   promiseAll().then(data => {
-    console.log(customer)
-    console.log(customerData)
-    console.log(bookingData)
-    console.log(roomData)
     displayCustomerName()
     displayCustomerBookings()
     displayTotalAmountSpent()

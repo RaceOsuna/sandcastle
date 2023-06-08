@@ -242,7 +242,7 @@ describe('Filter rooms by date', () => {
     ]);
   });
 
-  it.only('Should filter rooms for any given date', () => {
+  it('Should filter rooms for any given date', () => {
     
     let dateValue = '2023/11/28'
 
