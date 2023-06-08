@@ -120,6 +120,30 @@ describe('Filter rooms by date', () => {
 
     expect(filteredRooms).to.deep.equal([
       {
+        number: 1,
+        roomType: 'residential suite',
+        bidet: true,
+        bedSize: 'queen',
+        numBeds: 1,
+        costPerNight: 358.4
+      },
+      {
+        number: 2,
+        roomType: 'suite',
+        bidet: false,
+        bedSize: 'full',
+        numBeds: 2,
+        costPerNight: 477.38
+      },
+      {
+        number: 4,
+        roomType: 'single room',
+        bidet: false,
+        bedSize: 'queen',
+        numBeds: 1,
+        costPerNight: 429.44
+      },
+      {
         number: 5,
         roomType: 'single room',
         bidet: true,
@@ -134,6 +158,14 @@ describe('Filter rooms by date', () => {
         bedSize: 'queen',
         numBeds: 1,
         costPerNight: 397.02
+      },
+      {
+        number: 7,
+        roomType: 'single room',
+        bidet: false,
+        bedSize: 'queen',
+        numBeds: 2,
+        costPerNight: 231.46
       },
       {
         number: 8,
@@ -152,6 +184,14 @@ describe('Filter rooms by date', () => {
         costPerNight: 200.39
       },
       {
+        number: 10,
+        roomType: 'suite',
+        bidet: false,
+        bedSize: 'twin',
+        numBeds: 1,
+        costPerNight: 497.64
+      },
+      {
         number: 11,
         roomType: 'single room',
         bidet: true,
@@ -216,6 +256,14 @@ describe('Filter rooms by date', () => {
         costPerNight: 496.41
       },
       {
+        number: 19,
+        roomType: 'single room',
+        bidet: false,
+        bedSize: 'queen',
+        numBeds: 1,
+        costPerNight: 374.67
+      },
+      {
         number: 20,
         roomType: 'residential suite',
         bidet: false,
@@ -232,12 +280,36 @@ describe('Filter rooms by date', () => {
         costPerNight: 429.32
       },
       {
+        number: 22,
+        roomType: 'single room',
+        bidet: false,
+        bedSize: 'full',
+        numBeds: 2,
+        costPerNight: 350.31
+      },
+      {
+        number: 23,
+        roomType: 'residential suite',
+        bidet: false,
+        bedSize: 'queen',
+        numBeds: 2,
+        costPerNight: 176.36
+      },
+      {
         number: 24,
         roomType: 'suite',
         bidet: false,
         bedSize: 'queen',
         numBeds: 1,
         costPerNight: 327.24
+      },
+      {
+        number: 25,
+        roomType: 'single room',
+        bidet: true,
+        bedSize: 'queen',
+        numBeds: 1,
+        costPerNight: 305.85
       }
     ]);
   });
@@ -250,12 +322,36 @@ describe('Filter rooms by date', () => {
 
     expect(filteredRooms1).to.deep.equal([
       {
+        number: 1,
+        roomType: 'residential suite',
+        bidet: true,
+        bedSize: 'queen',
+        numBeds: 1,
+        costPerNight: 358.4
+      },
+      {
+        number: 2,
+        roomType: 'suite',
+        bidet: false,
+        bedSize: 'full',
+        numBeds: 2,
+        costPerNight: 477.38
+      },
+      {
         number: 3,
         roomType: 'single room',
         bidet: false,
         bedSize: 'king',
         numBeds: 1,
         costPerNight: 491.14
+      },
+      {
+        number: 4,
+        roomType: 'single room',
+        bidet: false,
+        bedSize: 'queen',
+        numBeds: 1,
+        costPerNight: 429.44
       },
       {
         number: 5,
@@ -274,12 +370,28 @@ describe('Filter rooms by date', () => {
         costPerNight: 397.02
       },
       {
+        number: 7,
+        roomType: 'single room',
+        bidet: false,
+        bedSize: 'queen',
+        numBeds: 2,
+        costPerNight: 231.46
+      },
+      {
         number: 8,
         roomType: 'junior suite',
         bidet: false,
         bedSize: 'king',
         numBeds: 1,
         costPerNight: 261.26
+      },
+      {
+        number: 10,
+        roomType: 'suite',
+        bidet: false,
+        bedSize: 'twin',
+        numBeds: 1,
+        costPerNight: 497.64
       },
       {
         number: 11,
@@ -346,6 +458,14 @@ describe('Filter rooms by date', () => {
         costPerNight: 496.41
       },
       {
+        number: 19,
+        roomType: 'single room',
+        bidet: false,
+        bedSize: 'queen',
+        numBeds: 1,
+        costPerNight: 374.67
+      },
+      {
         number: 20,
         roomType: 'residential suite',
         bidet: false,
@@ -362,12 +482,36 @@ describe('Filter rooms by date', () => {
         costPerNight: 429.32
       },
       {
+        number: 22,
+        roomType: 'single room',
+        bidet: false,
+        bedSize: 'full',
+        numBeds: 2,
+        costPerNight: 350.31
+      },
+      {
+        number: 23,
+        roomType: 'residential suite',
+        bidet: false,
+        bedSize: 'queen',
+        numBeds: 2,
+        costPerNight: 176.36
+      },
+      {
         number: 24,
         roomType: 'suite',
         bidet: false,
         bedSize: 'queen',
         numBeds: 1,
         costPerNight: 327.24
+      },
+      {
+        number: 25,
+        roomType: 'single room',
+        bidet: true,
+        bedSize: 'queen',
+        numBeds: 1,
+        costPerNight: 305.85
       }
     ]);
   });

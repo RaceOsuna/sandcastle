@@ -16,9 +16,10 @@ const getTotalAmountSpent = (customer, bookingData, roomData) => {
 }
 
 const filterRoomsByDate = (date, rooms, bookings) => {
+  const roomNum = bookings.filter((booking) => booking.date === date).map((index) => index.roomNumber)
   return rooms.reduce((acc, room) => {
-    bookings.forEach((booking) => {
-      if (!booking.date.includes(date) && booking.roomNumber === room.number && !acc.includes(room)) {
+    roomNum.forEach((num) => {
+      if (room.number !== num) {
         acc.push(room)
       }
     })
