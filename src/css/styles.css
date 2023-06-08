@@ -64,10 +64,11 @@ nav div {
   height: 85vh;
 }
 
+
 .bkngs {
   display: grid;
   background-color: #e3bc8c;
-  grid-template-columns: 33% 33% 33%;
+  /* grid-template-columns: 33% 33% 33%; */
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   justify-content: center;
@@ -131,6 +132,26 @@ nav div {
   border-radius: 10px;
 }
 
+.available-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid red;
+}
+
+.available-rooms {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  gap: 20px;
+  width: 80%;
+  /* border: 1px solid red; */
+}
+
+.room {
+  border: 1px solid black
+}
+
 .grid {
   margin-top: 20Px;
   display: grid;
@@ -154,5 +175,13 @@ nav div {
   padding: 0 2%;
   justify-content: space-between;
   align-items: center;
+}
+
+.hidden {
+  display :none
+}
+
+.invisible {
+  visibility: none;
 }
   

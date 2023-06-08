@@ -12,6 +12,7 @@ import './css/styles.css';
 
 const form = document.querySelector('.booking-form')
 const selectedDate = document.querySelector('.date')
+const availableSection = document.querySelector('.available-rooms')
 // const submitForm = () => {
 //   event.preventDefault()
 //   const formatDate = selectedDate.value.replaceAll('-', '/')
@@ -31,4 +32,4 @@ form.addEventListener('submit', (event) => {
 })
 
   
-export {selectedDate}
+export {selectedDate, availableSection}

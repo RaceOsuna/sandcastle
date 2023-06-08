@@ -1,6 +1,6 @@
 import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate } from "./dataMethods";
 import { customer, customerData, bookingData, roomData } from "./apiCalls";
-import { selectedDate } from "./scripts";
+import { selectedDate, availableSection } from "./scripts";
 
 const displayCustomerName = () => {
   const welcome = document.querySelector('.welcome')
@@ -32,7 +32,19 @@ const displayFilteredRooms = () => {
   const formattedDate = selectedDate.value.replaceAll('-', '/')
   const availableRooms = filterRoomsByDate(bookingData, roomData, formattedDate)
   console.log(availableRooms)
-  return availableRooms
+  availableRooms.forEach((room) => {
+    availableSection.innerHTML += 
+    `
+    <div class="room">
+      <p>Room Number: ${room.number}</p>
+      <p>Room Type: ${room.roomType}</p>
+      <p>Bidet: ${room.bidet}</p>
+      <p>Bed Size: ${room.bedSize}</p>
+      <p>Beds: ${room.numBeds}</p>
+      <p>Nightly Rate: ${room.costPerNight}</p>
+    </div>
+    `
+  })
 }
 
 
