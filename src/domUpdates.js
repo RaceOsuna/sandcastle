@@ -61,7 +61,6 @@ const displayRoomsByType = () => {
   availableSection.innerHTML = ''
   console.log(allAvailableRooms)
   const rooms = filterByRoomType(allAvailableRooms, roomTypes.value)
-  console.log(roomTypes.value)
   rooms.forEach((room) => {
     availableSection.innerHTML += 
     `
@@ -74,7 +73,10 @@ const displayRoomsByType = () => {
       <p>Nightly Rate: ${room.costPerNight}</p>
     </div>
     `
-})
+  });
+if (roomTypes.value === 'select') {
+  displayFilteredRooms()
+}
 }
 
 export {displayCustomerBookings, displayTotalAmountSpent, displayCustomerName, displayFilteredRooms, displayRoomsByType, hide, show}
