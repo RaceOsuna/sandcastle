@@ -41,10 +41,10 @@ Promise.all([customersResponse, bookingsResponse, roomsResponse]).then(([custome
   return customer;
   });
 
-// const bookRoom = (event, customer) => {
+// const bookRoom = () => {
 //   fetch('http://localhost:3001/api/v1/bookings', {
 //     method: 'POST',
-//     body: JSON.stringify({ "userID": customer.id, "date": event.target.value, "roomNumber": parseInt(event.target.id) }),
+//     body: JSON.stringify({ "userID": customer.id, "date": "2024/04/27", "roomNumber": 9 }),
 //     headers: {
 //       'Content-Type': 'application/json'
 //     }
@@ -68,5 +68,6 @@ export {
   customer,
   customerData,
   bookingData,
-  roomData
+  roomData,
+  bookRoom
 }

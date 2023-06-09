@@ -1,4 +1,4 @@
-import {customer, bookingData, customerData, roomData} from './apiCalls';
+import {customer, bookingData, customerData, roomData, bookRoom} from './apiCalls';
 
 import { displayFilteredRooms, displayRoomsByType, hide, show } from './domUpdates';
 // This is the JavaScript entry file - your code begins here
@@ -17,7 +17,7 @@ const selectedDate = document.querySelector('.date')
 const roomsDisplay = document.querySelector('.available-rooms')
 const roomsSection = document.querySelector('.available-section')
 const roomTypes = document.querySelector('.room-types')
-const bookButton = document.querySelector('.book-btn')
+// const bookButton = document.querySelector('.book-button')
 
 form.addEventListener('submit', (event) => {
   event.preventDefault()
@@ -40,6 +40,10 @@ roomsButton.addEventListener('click', () => {
   hide(customerBookings)
   show(roomsSection)
 })
+
+// bookButton.addEventListener('click', () => {
+//   bookRoom()
+// })
 
 
 export {selectedDate, roomsDisplay, roomTypes}

@@ -51,7 +51,6 @@ const displayAllRooms = () => {
       <p>Bed Size: ${room.bedSize}</p>
       <p>Beds: ${room.numBeds}</p>
       <p>Nightly Rate: ${room.costPerNight}</p>
-      <button class="book-btn">book</book>
     </div>
     `
   })
