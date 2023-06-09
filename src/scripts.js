@@ -38,5 +38,9 @@ roomTypes.addEventListener('change', (event) => {
   displayRoomsByType()
 })
 
+homePage.addEventListener('click', () => {
+  show(customerBookings)
+  hide(availableRooms)
+})
   
 export {selectedDate, availableSection, roomTypes, homePage}
