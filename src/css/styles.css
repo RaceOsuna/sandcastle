@@ -130,6 +130,7 @@ nav div {
   height:45px;
   width: 40%;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .available-section {
