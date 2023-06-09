@@ -1,4 +1,5 @@
-import { displayCustomerName, displayTotalAmountSpent, displayCustomerBookings } from "./domUpdates"
+import { displayCustomerName, displayTotalAmountSpent, displayCustomerBookings, displayAllRooms } from "./domUpdates"
+
 
 let customer, customerData, roomData, bookingData
 
@@ -29,13 +30,35 @@ Promise.all([customersResponse, bookingsResponse, roomsResponse]).then(([custome
 
   customer = selectRandomUser(customerData);
 
+
   displayCustomerName()
   displayCustomerBookings()
   displayTotalAmountSpent()
+  displayAllRooms()
+  })
 
+  console.log(roomData)
   return customer;
   });
-});
+
+// const bookRoom = (event, customer) => {
+//   fetch('http://localhost:3001/api/v1/bookings', {
+//     method: 'POST',
+//     body: JSON.stringify({ "userID": customer.id, "date": event.target.value, "roomNumber": parseInt(event.target.id) }),
+//     headers: {
+//       'Content-Type': 'application/json'
+//     }
+//   })
+//   .then((response) => {
+//     if(!response.ok) {
+//       throw new Error(`${response.status}`)
+//     } else {
+//       return response.json();
+//     }
+//   })
+//   .then(data => console.log("hello"))
+//   .catch(error => alert(`${error.message}`));
+// };
 
   const log = () => {console.log(customer)}
   setTimeout(log, 4000)

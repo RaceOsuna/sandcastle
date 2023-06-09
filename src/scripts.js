@@ -9,28 +9,21 @@ import './css/styles.css';
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 //import './images/turing-logo.png'
-const homePage = document.querySelector('.home')
+const homeButton = document.querySelector('.home')
+const roomsButton = document.querySelector('.rooms')
 const customerBookings = document.querySelector('.user-bookings')
 const form = document.querySelector('.booking-form')
 const selectedDate = document.querySelector('.date')
-const availableSection = document.querySelector('.available-rooms')
-const availableRooms = document.querySelector('.available-section')
+const roomsDisplay = document.querySelector('.available-rooms')
+const roomsSection = document.querySelector('.available-section')
 const roomTypes = document.querySelector('.room-types')
-// const submitForm = () => {
-//   event.preventDefault()
-//   const formatDate = selectedDate.value.replaceAll('-', '/')
-//   console.log('hello')
-// }
-
-// const formattedDate = selectedDate.addEventListener('input', () => {
-//   console.log(selectedDate.value)
-// })
+const bookButton = document.querySelector('.book-btn')
 
 form.addEventListener('submit', (event) => {
   event.preventDefault()
   displayFilteredRooms()
   hide(customerBookings)
-  show(availableRooms)
+  show(roomsSection)
 })
 
 roomTypes.addEventListener('change', (event) => {
@@ -38,10 +31,15 @@ roomTypes.addEventListener('change', (event) => {
   displayRoomsByType()
 })
 
-homePage.addEventListener('click', () => {
+homeButton.addEventListener('click', () => {
   show(customerBookings)
-  hide(availableRooms)
+  hide(roomsSection)
+})
+
+roomsButton.addEventListener('click', () => {
+  hide(customerBookings)
+  show(roomsSection)
 })
 
 
-export {selectedDate, availableSection, roomTypes, homePage}
+export {selectedDate, roomsDisplay, roomTypes}

@@ -1,6 +1,6 @@
 import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType } from "./dataMethods";
 import { customer, customerData, bookingData, roomData } from "./apiCalls";
-import { selectedDate, availableSection, roomTypes, homePage } from "./scripts";
+import { selectedDate, roomsDisplay, roomTypes } from "./scripts";
 
 let allAvailableRooms = []
 
@@ -38,12 +38,33 @@ const displayTotalAmountSpent = () => {
   dollars.innerText = `ATM: $${total}`
 }
 
+const displayAllRooms = () => {
+  roomsDisplay.innerHTML = ''
+  roomData.forEach((room) => {
+    allAvailableRooms.push(room)
+    roomsDisplay.innerHTML += 
+    `
+    <div class="room">
+      <p>Room Number: ${room.number}</p>
+      <p>Room Type: ${room.roomType}</p>
+      <p>Bidet: ${room.bidet}</p>
+      <p>Bed Size: ${room.bedSize}</p>
+      <p>Beds: ${room.numBeds}</p>
+      <p>Nightly Rate: ${room.costPerNight}</p>
+      <button class="book-btn">book</book>
+    </div>
+    `
+  })
+}
+
 const displayFilteredRooms = () => {
+  allAvailableRooms = []
+  roomsDisplay.innerHTML = ''
   const formattedDate = selectedDate.value.replaceAll('-', '/')
   const availableRooms = filterRoomsByDate(bookingData, roomData, formattedDate)
   availableRooms.forEach((room) => {
     allAvailableRooms.push(room)
-    availableSection.innerHTML += 
+    roomsDisplay.innerHTML += 
     `
     <div class="room" id="${room.number}" value="${formattedDate}">
       <p>Room Number: ${room.number}</p>
@@ -58,11 +79,10 @@ const displayFilteredRooms = () => {
 }
 
 const displayRoomsByType = () => {
-  availableSection.innerHTML = ''
-  console.log(allAvailableRooms)
+  roomsDisplay.innerHTML = ''
   const rooms = filterByRoomType(allAvailableRooms, roomTypes.value)
   rooms.forEach((room) => {
-    availableSection.innerHTML += 
+    roomsDisplay.innerHTML += 
     `
     <div class="room">
       <p>Room Number: ${room.number}</p>
@@ -79,4 +99,4 @@ if (roomTypes.value === 'select') {
 }
 }
 
-export {displayCustomerBookings, displayTotalAmountSpent, displayCustomerName, displayFilteredRooms, displayRoomsByType, hide, show}
+export {displayCustomerBookings, displayTotalAmountSpent, displayCustomerName, displayFilteredRooms, displayRoomsByType, hide, show, displayAllRooms}
