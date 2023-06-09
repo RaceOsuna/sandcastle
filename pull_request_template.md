@@ -6,7 +6,7 @@ Please also include any relevant motivation and context.
 
 Please delete options that are not relevant.
 
-- [ ] Update to existing coke (non-breaking)
+- [ ] Refactor existing code (non-breaking)
 - [ ] Bug fix (non-breaking change which fixes an issue)
 - [ ] New feature (non-breaking change which adds functionality)
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
@@ -17,7 +17,7 @@ Please describe the tests that you ran to verify your changes.
 
 # Checklist:
 
-- [ ] My code follows the TDD (Test Drven Development) style guidelines of this project
+- [ ] My code follows the TDD (Test Driven Development) style guidelines of this project
 - [ ] New and existing unit tests pass locally with my changes
 - [ ] I have written modular, reusable code that follows SRP (Single Responsibility Principle)
 - [ ] I have performed a self-review of my own code

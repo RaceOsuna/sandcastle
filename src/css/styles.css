@@ -64,10 +64,11 @@ nav div {
   height: 85vh;
 }
 
+
 .bkngs {
   display: grid;
   background-color: #e3bc8c;
-  grid-template-columns: 33% 33% 33%;
+  /* grid-template-columns: 33% 33% 33%; */
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   justify-content: center;
@@ -76,6 +77,7 @@ nav div {
   /* height: 32rem; */
   height: 500px;
   overflow: scroll;
+  scroll-behavior: smooth;
   border-top: 1px solid #bed4ea;
   box-shadow: 0 10px 10px black;
 }
@@ -100,7 +102,7 @@ nav div {
   border-radius: 10px;
   box-shadow: 0 10px 10px black;
   width: 100%;
-  height: 500px 
+  height: 250px 
 }
 
 .card form {
@@ -128,6 +130,38 @@ nav div {
   height:45px;
   width: 40%;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+.available-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.available-rooms {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  gap: 20px;
+  width: 80%;
+  /* border: 1px solid red; */
+}
+
+.room-filter {
+  display: flex;
+  align-self: flex-start;
+  margin: 2% 2%;
+  width: 15%
+}
+
+select {
+  height: 30px;
+}
+
+.room {
+  border: 1px solid black
 }
 
 .grid {
@@ -153,5 +187,13 @@ nav div {
   padding: 0 2%;
   justify-content: space-between;
   align-items: center;
+}
+
+.hidden {
+  display :none
+}
+
+.invisible {
+  visibility: none;
 }
   

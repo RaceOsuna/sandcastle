@@ -13,7 +13,7 @@
       <nav>
         <div>
           <button class="nav-btn home">Home</button>
-          <button class="nav-btn book">Book</button>
+          <button class="nav-btn rooms">Rooms</button>
           <button class="nav-btn log-out">Log Out</button>
         </div>
       </nav>
@@ -31,26 +31,34 @@
             <!-- bookings here -->
           </div>
         </div>
-        <div class="booking-form card container">
-          <form>
+        <div class="card container">
+          <form class="booking-form">
             <h2 class="form-header">Book a Room!</h2>
             <div>
-              <input class="input" type="date" required>
-            </div>
-            <div>
-              <input class="input" type="date" required>
-            </div>
-            <div>
-              <input class="input" type="Name" required>
-            </div>
-            <div>
-              <input class="input" type="number" required>
+              <input class="input date" type="date" required>
             </div>
             <div>
               <input class="submit" type="submit">
             </div>
           </form>
         </div>
+      </div>
+    </section>
+    <section class="available-section hidden"> 
+      <div class="room-filter">
+        <label for=""><h3>Room Type:</h3>
+          <select class="room-types" name="filter-rooms">
+            <option value="select">All Rooms</option>
+            <option>single room</option>
+            <option>junior suite</option>
+            <option>suite</option>
+            <option>residential suite</option>
+          </select>
+        </label>
+        <!-- <button class="book-button">BOOK</button> -->
+      </div>
+      <div class="available-rooms">
+        <!-- available rooms here -->
       </div>
     </section>
   </main>

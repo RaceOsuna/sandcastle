@@ -15,4 +15,14 @@ const getTotalAmountSpent = (customer, bookingData, roomData) => {
     return totalSpent.toFixed(2)
 }
 
-export {getCustomerBookings, getTotalAmountSpent}
+const filterRoomsByDate = (bookingData, roomData, date) => {
+  const booked = bookingData.filter((booking) => booking.date === date).map((index) => index.roomNumber)
+  return roomData.filter((room) => !booked.includes(room.number))
+}
+
+
+const filterByRoomType = (roomData, type) => {
+  return roomData.filter(room => room.roomType === type)
+}
+
+export {getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType}

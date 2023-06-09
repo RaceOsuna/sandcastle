@@ -130,7 +130,7 @@ const mockBookingData = [
 "userID": 34,
 "date": "2023/11/28",
 "roomNumber": 9
-},
+}
 ];
 
 export {mockBookingData}

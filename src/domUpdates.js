@@ -1,5 +1,16 @@
-import { getCustomerBookings, getTotalAmountSpent } from "./dataMethods";
+import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType } from "./dataMethods";
 import { customer, customerData, bookingData, roomData } from "./apiCalls";
+import { selectedDate, roomsDisplay, roomTypes } from "./scripts";
+
+let allAvailableRooms = []
+
+const hide = (element) => {
+  element.classList.add('hidden')
+}
+
+const show = (element) => {
+  element.classList.remove('hidden')
+}
 
 const displayCustomerName = () => {
   const welcome = document.querySelector('.welcome')
@@ -27,4 +38,65 @@ const displayTotalAmountSpent = () => {
   dollars.innerText = `ATM: $${total}`
 }
 
-export {displayCustomerBookings, displayTotalAmountSpent, displayCustomerName}
+const displayAllRooms = () => {
+  roomsDisplay.innerHTML = ''
+  roomData.forEach((room) => {
+    allAvailableRooms.push(room)
+    roomsDisplay.innerHTML += 
+    `
+    <div class="room">
+      <p>Room Number: ${room.number}</p>
+      <p>Room Type: ${room.roomType}</p>
+      <p>Bidet: ${room.bidet}</p>
+      <p>Bed Size: ${room.bedSize}</p>
+      <p>Beds: ${room.numBeds}</p>
+      <p>Nightly Rate: ${room.costPerNight}</p>
+    </div>
+    `
+  })
+}
+
+const displayFilteredRooms = () => {
+  allAvailableRooms = []
+  roomsDisplay.innerHTML = ''
+  const formattedDate = selectedDate.value.replaceAll('-', '/')
+  const availableRooms = filterRoomsByDate(bookingData, roomData, formattedDate)
+  availableRooms.forEach((room) => {
+    allAvailableRooms.push(room)
+    roomsDisplay.innerHTML += 
+    `
+    <div class="room">
+      <p>Room Number: ${room.number}</p>
+      <p>Room Type: ${room.roomType}</p>
+      <p>Bidet: ${room.bidet}</p>
+      <p>Bed Size: ${room.bedSize}</p>
+      <p>Beds: ${room.numBeds}</p>
+      <p>Nightly Rate: ${room.costPerNight}</p>
+      <button class="book-button" id="${room.number}" value="${formattedDate}">Book Now</button>
+    </div>
+    `
+  })
+}
+
+const displayRoomsByType = () => {
+  roomsDisplay.innerHTML = ''
+  const rooms = filterByRoomType(allAvailableRooms, roomTypes.value)
+  rooms.forEach((room) => {
+    roomsDisplay.innerHTML += 
+    `
+    <div class="room">
+      <p>Room Number: ${room.number}</p>
+      <p>Room Type: ${room.roomType}</p>
+      <p>Bidet: ${room.bidet}</p>
+      <p>Bed Size: ${room.bedSize}</p>
+      <p>Beds: ${room.numBeds}</p>
+      <p>Nightly Rate: ${room.costPerNight}</p>
+    </div>
+    `
+  });
+if (roomTypes.value === 'select') {
+  displayFilteredRooms()
+}
+}
+
+export {displayCustomerBookings, displayTotalAmountSpent, displayCustomerName, displayFilteredRooms, displayRoomsByType, hide, show, displayAllRooms}
