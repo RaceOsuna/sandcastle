@@ -65,13 +65,14 @@ const displayFilteredRooms = () => {
     allAvailableRooms.push(room)
     roomsDisplay.innerHTML += 
     `
-    <div class="room" id="${room.number}" value="${formattedDate}">
+    <div class="room">
       <p>Room Number: ${room.number}</p>
       <p>Room Type: ${room.roomType}</p>
       <p>Bidet: ${room.bidet}</p>
       <p>Bed Size: ${room.bedSize}</p>
       <p>Beds: ${room.numBeds}</p>
       <p>Nightly Rate: ${room.costPerNight}</p>
+      <button class="book-button" id="${room.number}" value="${formattedDate}">Book Now</button>
     </div>
     `
   })

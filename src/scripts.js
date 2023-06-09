@@ -41,9 +41,13 @@ roomsButton.addEventListener('click', () => {
   show(roomsSection)
 })
 
-// bookButton.addEventListener('click', () => {
-//   bookRoom()
-// })
+roomsDisplay.addEventListener('click', (event) => {
+  const date = event.target.value
+  const num = Number(event.target.id)
+  if (event.target.className === "book-button") {
+    bookRoom(date, num)
+  }
+})
 
 
 export {selectedDate, roomsDisplay, roomTypes}

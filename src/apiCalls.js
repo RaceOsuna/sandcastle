@@ -41,10 +41,10 @@ Promise.all([customersResponse, bookingsResponse, roomsResponse]).then(([custome
   return customer;
   });
 
-const bookRoom = () => {
+const bookRoom = (date, num) => {
   fetch('http://localhost:3001/api/v1/bookings', {
     method: 'POST',
-    body: JSON.stringify({ "userID": customer.id, "date": "2024/04/27", "roomNumber": 9 }),
+    body: JSON.stringify({ "userID": customer.id, "date": date, "roomNumber": num}),
     headers: {
       'Content-Type': 'application/json'
     }
