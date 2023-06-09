@@ -42,5 +42,6 @@ homePage.addEventListener('click', () => {
   show(customerBookings)
   hide(availableRooms)
 })
-  
+
+
 export {selectedDate, availableSection, roomTypes, homePage}

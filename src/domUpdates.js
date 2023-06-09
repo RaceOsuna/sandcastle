@@ -45,7 +45,7 @@ const displayFilteredRooms = () => {
     allAvailableRooms.push(room)
     availableSection.innerHTML += 
     `
-    <div class="room">
+    <div class="room" id="${room.number}" value="${formattedDate}">
       <p>Room Number: ${room.number}</p>
       <p>Room Type: ${room.roomType}</p>
       <p>Bidet: ${room.bidet}</p>
