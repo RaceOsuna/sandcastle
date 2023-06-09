@@ -1,6 +1,16 @@
-import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate } from "./dataMethods";
+import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType } from "./dataMethods";
 import { customer, customerData, bookingData, roomData } from "./apiCalls";
-import { selectedDate, availableSection } from "./scripts";
+import { selectedDate, availableSection, roomTypes, homePage } from "./scripts";
+
+let allAvailableRooms = []
+
+const hide = (element) => {
+  element.classList.add('hidden')
+}
+
+const show = (element) => {
+  element.classList.remove('hidden')
+}
 
 const displayCustomerName = () => {
   const welcome = document.querySelector('.welcome')
@@ -31,8 +41,8 @@ const displayTotalAmountSpent = () => {
 const displayFilteredRooms = () => {
   const formattedDate = selectedDate.value.replaceAll('-', '/')
   const availableRooms = filterRoomsByDate(bookingData, roomData, formattedDate)
-  console.log(availableRooms)
   availableRooms.forEach((room) => {
+    allAvailableRooms.push(room)
     availableSection.innerHTML += 
     `
     <div class="room">
@@ -47,6 +57,24 @@ const displayFilteredRooms = () => {
   })
 }
 
+const displayRoomsByType = () => {
+  availableSection.innerHTML = ''
+  console.log(allAvailableRooms)
+  const rooms = filterByRoomType(allAvailableRooms, roomTypes.value)
+  console.log(roomTypes.value)
+  rooms.forEach((room) => {
+    availableSection.innerHTML += 
+    `
+    <div class="room">
+      <p>Room Number: ${room.number}</p>
+      <p>Room Type: ${room.roomType}</p>
+      <p>Bidet: ${room.bidet}</p>
+      <p>Bed Size: ${room.bedSize}</p>
+      <p>Beds: ${room.numBeds}</p>
+      <p>Nightly Rate: ${room.costPerNight}</p>
+    </div>
+    `
+})
+}
 
-
-export {displayCustomerBookings, displayTotalAmountSpent, displayCustomerName, displayFilteredRooms}
+export {displayCustomerBookings, displayTotalAmountSpent, displayCustomerName, displayFilteredRooms, displayRoomsByType, hide, show}
