@@ -48,4 +48,5 @@ const displayFilteredRooms = () => {
 }
 
 
+
 export {displayCustomerBookings, displayTotalAmountSpent, displayCustomerName, displayFilteredRooms}

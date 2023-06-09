@@ -2,7 +2,7 @@ import chai from 'chai';
 const expect = chai.expect;
 
 
-import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate } from '../src/dataMethods';
+import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType } from '../src/dataMethods';
 
 const {mockCustomerData} = require('../src/data/mockCustomers')
 const {mockRoomData} = require('../src/data/mockRooms')
@@ -514,5 +514,155 @@ describe('Filter rooms by date', () => {
         costPerNight: 305.85
       }
     ]);
+  });
+});
+
+describe('Filter by room type', () => {
+  it('Should return rooms that match the selected room type', () => {
+    
+    const juniorSuites = filterByRoomType(mockRoomData, "junior suite")
+
+    expect(juniorSuites).to.deep.equal([{
+      number: 6,
+      roomType: 'junior suite',
+      bidet: true,
+      bedSize: 'queen',
+      numBeds: 1,
+      costPerNight: 397.02
+    },
+    {
+      number: 8,
+      roomType: 'junior suite',
+      bidet: false,
+      bedSize: 'king',
+      numBeds: 1,
+      costPerNight: 261.26
+    },
+    {
+      number: 17,
+      roomType: 'junior suite',
+      bidet: false,
+      bedSize: 'twin',
+      numBeds: 2,
+      costPerNight: 328.15
+    },
+    {
+      number: 18,
+      roomType: 'junior suite',
+      bidet: false,
+      bedSize: 'king',
+      numBeds: 2,
+      costPerNight: 496.41
+    }]);
+  });
+
+  it.only("should return rooms for another selected room type", () => {
+
+    const singleRoom = filterByRoomType(mockRoomData, "single room")
+
+    expect(singleRoom).to.deep.equal([{
+      number: 3,
+      roomType: 'single room',
+      bidet: false,
+      bedSize: 'king',
+      numBeds: 1,
+      costPerNight: 491.14
+    },
+    {
+      number: 4,
+      roomType: 'single room',
+      bidet: false,
+      bedSize: 'queen',
+      numBeds: 1,
+      costPerNight: 429.44
+    },
+    {
+      number: 5,
+      roomType: 'single room',
+      bidet: true,
+      bedSize: 'queen',
+      numBeds: 2,
+      costPerNight: 340.17
+    },
+    {
+      number: 7,
+      roomType: 'single room',
+      bidet: false,
+      bedSize: 'queen',
+      numBeds: 2,
+      costPerNight: 231.46
+    },
+    {
+      number: 9,
+      roomType: 'single room',
+      bidet: true,
+      bedSize: 'queen',
+      numBeds: 1,
+      costPerNight: 200.39
+    },
+    {
+      number: 11,
+      roomType: 'single room',
+      bidet: true,
+      bedSize: 'twin',
+      numBeds: 2,
+      costPerNight: 207.24
+    },
+    {
+      number: 12,
+      roomType: 'single room',
+      bidet: false,
+      bedSize: 'twin',
+      numBeds: 2,
+      costPerNight: 172.09
+    },
+    {
+      number: 13,
+      roomType: 'single room',
+      bidet: false,
+      bedSize: 'queen',
+      numBeds: 2,
+      costPerNight: 423.92
+    },
+    {
+      number: 16,
+      roomType: 'single room',
+      bidet: false,
+      bedSize: 'full',
+      numBeds: 2,
+      costPerNight: 325.6
+    },
+    {
+      number: 19,
+      roomType: 'single room',
+      bidet: false,
+      bedSize: 'queen',
+      numBeds: 1,
+      costPerNight: 374.67
+    },
+    {
+      number: 21,
+      roomType: 'single room',
+      bidet: false,
+      bedSize: 'full',
+      numBeds: 2,
+      costPerNight: 429.32
+    },
+    {
+      number: 22,
+      roomType: 'single room',
+      bidet: false,
+      bedSize: 'full',
+      numBeds: 2,
+      costPerNight: 350.31
+    },
+    {
+      number: 25,
+      roomType: 'single room',
+      bidet: true,
+      bedSize: 'queen',
+      numBeds: 1,
+      costPerNight: 305.85
+    }]);
   });
 });

@@ -20,4 +20,9 @@ const filterRoomsByDate = (bookingData, roomData, date) => {
   return roomData.filter((room) => !booked.includes(room.number))
 }
 
-export {getCustomerBookings, getTotalAmountSpent, filterRoomsByDate}
+
+const filterByRoomType = (roomData, type) => {
+  return roomData.filter(room => room.roomType === type)
+}
+
+export {getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType}
