@@ -1,4 +1,4 @@
-import { displayCustomerName, displayTotalAmountSpent, displayCustomerBookings } from "./domUpdates"
+import { displayCustomerName, displayTotalAmountSpent, displayCustomerBookings, displayFilteredRooms } from "./domUpdates"
 
 
 let customer, customerData, roomData, bookingData
@@ -90,6 +90,7 @@ const getUpdatedBookings = () => {
     console.log(response.bookings)
     bookingData = response.bookings
     displayCustomerBookings()
+    displayFilteredRooms()
   })
   .catch(error => console.log(error.message))
 }

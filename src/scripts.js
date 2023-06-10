@@ -9,8 +9,6 @@ import './css/styles.css';
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 //import './images/turing-logo.png'
-const homeButton = document.querySelector('.home')
-const roomsButton = document.querySelector('.rooms')
 const customerBookings = document.querySelector('.user-bookings')
 const form = document.querySelector('.booking-form')
 const selectedDate = document.querySelector('.date')
@@ -34,6 +32,7 @@ roomsDisplay.addEventListener('click', (event) => {
   const num = Number(event.target.id)
   if (event.target.className === "book-button") {
     bookRoom(date, num)
+    event.target.disabled = true
   }
   setTimeout(getUpdatedBookings, 2000)
 })
