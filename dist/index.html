@@ -12,8 +12,6 @@
       <h1 class="logo">Sandcastle.</h1>
       <nav>
         <div>
-          <button class="nav-btn home">Home</button>
-          <button class="nav-btn rooms">Rooms</button>
           <button class="nav-btn log-out">Log Out</button>
         </div>
       </nav>
@@ -24,27 +22,39 @@
       <h1 class="welcome"></h1>
       <h1 class="dollars"></h1>
     </div>
-    <section class="user-bookings">
+    <section class="user-bookings container">
       <div class="grid">
-        <div class="booking container">
-          <div class="bkngs">
+        <div class="bkngs container">
             <!-- bookings here -->
-          </div>
         </div>
         <div class="card container">
           <form class="booking-form">
-            <h2 class="form-header">Book a Room!</h2>
+            <h2 class="form-header">Find a Room!</h2>
             <div>
               <input class="input date" type="date" required>
             </div>
             <div>
-              <input class="submit" type="submit">
+              <input class="input submit" type="submit">
             </div>
           </form>
-        </div>
+          <div class="available-section hidden">
+            <div class="room-filter">
+              <label for=""><h3>Room Type:</h3>
+                <select class="room-types" name="filter-rooms">
+                  <option value="select">All Rooms</option>
+                  <option>single room</option>
+                  <option>junior suite</option>
+                  <option>suite</option>
+                  <option>residential suite</option>
+                </select>
+              </label>
+            </div>
+            <div class="available-rooms"></div>
+          </div>
+        </div>  
       </div>
     </section>
-    <section class="available-section hidden"> 
+    <!-- <section class="available-section hidden"> 
       <div class="room-filter">
         <label for=""><h3>Room Type:</h3>
           <select class="room-types" name="filter-rooms">
@@ -55,12 +65,10 @@
             <option>residential suite</option>
           </select>
         </label>
-        <!-- <button class="book-button">BOOK</button> -->
       </div>
       <div class="available-rooms">
-        <!-- available rooms here -->
       </div>
-    </section>
+    </section> -->
   </main>
   <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->
   <script src="bundle.js"></script>
