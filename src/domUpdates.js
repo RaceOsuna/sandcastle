@@ -37,23 +37,11 @@ const displayTotalAmountSpent = () => {
   dollars.innerText = `ATM: $${total}`
 }
 
-// const displayAllRooms = () => {
-//   roomsDisplay.innerHTML = ''
-//   roomData.forEach((room) => {
-//     allAvailableRooms.push(room)
-//     roomsDisplay.innerHTML += 
-//     `
-//     <div class="room">
-//       <p>Room Number: ${room.number}</p>
-//       <p>Room Type: ${room.roomType}</p>
-//       <p>Bidet: ${room.bidet}</p>
-//       <p>Bed Size: ${room.bedSize}</p>
-//       <p>Beds: ${room.numBeds}</p>
-//       <p>Nightly Rate: ${room.costPerNight}</p>
-//     </div>
-//     `
-//   })
-// }
+const displayNoRoomsAvailableMessage = (arr) => {
+  if (!arr.length) {
+    roomsDisplay.innerHTML = `Sorry! No rooms available. Please adjust your search.`
+  }
+}
 
 const displayFilteredRooms = () => {
   allAvailableRooms = []
@@ -75,12 +63,14 @@ const displayFilteredRooms = () => {
     </div>
     `
   })
+  displayNoRoomsAvailableMessage(allAvailableRooms)
 }
 
 const displayRoomsByType = () => {
   roomsDisplay.innerHTML = ''
   const formattedDate = selectedDate.value.replaceAll('-', '/')
   const rooms = filterByRoomType(allAvailableRooms, roomTypes.value)
+  displayNoRoomsAvailableMessage(rooms)
   rooms.forEach((room) => {
     roomsDisplay.innerHTML += 
     `
@@ -97,6 +87,8 @@ const displayRoomsByType = () => {
   });
 if (roomTypes.value === 'select') {
   displayFilteredRooms()
+} else {
+  displayNoRoomsAvailableMessage
 }
 }
 
