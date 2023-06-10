@@ -37,23 +37,23 @@ const displayTotalAmountSpent = () => {
   dollars.innerText = `ATM: $${total}`
 }
 
-const displayAllRooms = () => {
-  roomsDisplay.innerHTML = ''
-  roomData.forEach((room) => {
-    allAvailableRooms.push(room)
-    roomsDisplay.innerHTML += 
-    `
-    <div class="room">
-      <p>Room Number: ${room.number}</p>
-      <p>Room Type: ${room.roomType}</p>
-      <p>Bidet: ${room.bidet}</p>
-      <p>Bed Size: ${room.bedSize}</p>
-      <p>Beds: ${room.numBeds}</p>
-      <p>Nightly Rate: ${room.costPerNight}</p>
-    </div>
-    `
-  })
-}
+// const displayAllRooms = () => {
+//   roomsDisplay.innerHTML = ''
+//   roomData.forEach((room) => {
+//     allAvailableRooms.push(room)
+//     roomsDisplay.innerHTML += 
+//     `
+//     <div class="room">
+//       <p>Room Number: ${room.number}</p>
+//       <p>Room Type: ${room.roomType}</p>
+//       <p>Bidet: ${room.bidet}</p>
+//       <p>Bed Size: ${room.bedSize}</p>
+//       <p>Beds: ${room.numBeds}</p>
+//       <p>Nightly Rate: ${room.costPerNight}</p>
+//     </div>
+//     `
+//   })
+// }
 
 const displayFilteredRooms = () => {
   allAvailableRooms = []
@@ -79,6 +79,7 @@ const displayFilteredRooms = () => {
 
 const displayRoomsByType = () => {
   roomsDisplay.innerHTML = ''
+  const formattedDate = selectedDate.value.replaceAll('-', '/')
   const rooms = filterByRoomType(allAvailableRooms, roomTypes.value)
   rooms.forEach((room) => {
     roomsDisplay.innerHTML += 
@@ -90,6 +91,7 @@ const displayRoomsByType = () => {
       <p>Bed Size: ${room.bedSize}</p>
       <p>Beds: ${room.numBeds}</p>
       <p>Nightly Rate: ${room.costPerNight}</p>
+      <button class="book-button" id="${room.number}" value="${formattedDate}">Book Now</button>
     </div>
     `
   });
@@ -98,4 +100,4 @@ if (roomTypes.value === 'select') {
 }
 }
 
-export {displayCustomerBookings, displayTotalAmountSpent, displayCustomerName, displayFilteredRooms, displayRoomsByType, hide, show, displayAllRooms}
+export {displayCustomerBookings, displayTotalAmountSpent, displayCustomerName, displayFilteredRooms, displayRoomsByType, hide, show}

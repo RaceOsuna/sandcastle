@@ -1,4 +1,4 @@
-import { displayCustomerName, displayTotalAmountSpent, displayCustomerBookings, displayAllRooms } from "./domUpdates"
+import { displayCustomerName, displayTotalAmountSpent, displayCustomerBookings } from "./domUpdates"
 
 
 let customer, customerData, roomData, bookingData
@@ -34,7 +34,6 @@ Promise.all([customersResponse, bookingsResponse, roomsResponse]).then(([custome
   displayCustomerName()
   displayCustomerBookings()
   displayTotalAmountSpent()
-  displayAllRooms()
   })
 
   console.log(roomData)
