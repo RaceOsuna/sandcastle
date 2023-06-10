@@ -4,6 +4,10 @@ import { selectedDate, roomsDisplay, roomTypes } from "./scripts";
 
 let allAvailableRooms = []
 
+const today = new Date().toISOString().split('T')[0].replaceAll('-', '/')
+const calander = document.getElementById('calander')
+calander.setAttribute('min', today)
+
 const hide = (element) => {
   element.classList.add('hidden')
 }

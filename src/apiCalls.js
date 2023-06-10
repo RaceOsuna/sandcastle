@@ -55,8 +55,12 @@ Promise.all([customersResponse, bookingsResponse, roomsResponse]).then(([custome
   displayCustomerBookings()
   displayTotalAmountSpent()
   })
-
-  console.log(roomData)
+  
+  const today = new Date().toISOString().split('T')[0]
+  const calander = document.getElementById('calander')
+  calander.setAttribute('min', today)
+  console.log(today)
+  
   return customer;
   });
 
