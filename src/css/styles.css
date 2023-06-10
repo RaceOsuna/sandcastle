@@ -11,11 +11,12 @@ body {
   font-family: 'Poppins', sans-serif;
   color:#45494d;
   line-height: 1.5;
+  background-color: #dbe8f5;
 }
 
 h1 {
   font-weight: 400;
-  margin: 10px 0;
+  margin: 10px 2%;
   font-size: xx-large;
 }
 
@@ -25,7 +26,7 @@ img {
 }
 
 .navbar {
-  background-color: #047aed;
+  background-color: #397dcb;
   color: #fff;
   height: 14%;
   /* height: 70px; */
@@ -39,7 +40,7 @@ nav div {
 
 .nav-btn {
   color: white;
-  background-color: #047aed;
+  background-color: #397dcb;
   border: none;
   cursor: pointer;
   margin: 0 1%;
@@ -60,49 +61,48 @@ nav div {
 }
 
 .user-bookings .grid {
-  grid-template-columns: 65% 30%;
+  grid-template-columns: 35% 65%;
   height: 85vh;
 }
 
 
 .bkngs {
-  display: grid;
-  background-color: #e3bc8c;
-  /* grid-template-columns: 33% 33% 33%; */
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  text-align: center;
   align-items: center;
   padding: 2% 2%;
-  /* height: 32rem; */
-  height: 500px;
-  overflow: scroll;
+  margin: 2% 0%;
+  width: 75%;
+  height: 80%;
+  overflow-y: scroll;
   scroll-behavior: smooth;
   border-top: 1px solid #bed4ea;
   box-shadow: 0 10px 10px black;
+  background-color: #fff;
 }
 
 .bkngs div {
-  background-color: #fff;
-  padding: 1% 1%;
-  border: 1px solid black
+  background-color: #397dcb;
+  margin: 5% 0%;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100% ;
+  color: #fff;
 }
 
-/* .bkngs {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  justify-content: center;
-  align-items: center;
-} */
-
 .card {
-  background-color: #fbdd4a;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 10px 10px black;
-  width: 100%;
-  height: 250px 
+  width: 75%;
+  height: 80%;
+  overflow-y: scroll;
 }
 
 .card form {
@@ -110,10 +110,14 @@ nav div {
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
-  gap: 30px;
+  margin: 2% 0;
+  gap: 10px;
+  background-color: #fbdd4a;
+  border-radius: 5px;
 }
 
 .form-header {
+  margin-top: 2%;
   align-self: center;
   font-size: xx-large;
 }
@@ -123,7 +127,9 @@ nav div {
   width: 80%;
   height: 45px;
   font-size: large;
-  padding: 0 2%;
+  background-color: #fff;
+  margin: 2% 0;
+  cursor: pointer;
 }
 
 .submit{
@@ -142,11 +148,20 @@ nav div {
 
 .available-rooms {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   gap: 20px;
-  width: 80%;
+  width: 90%;
+  margin-bottom: 5%;
+  margin-top: 2%;
   /* border: 1px solid red; */
+}
+
+.room {
+  background-color: #397dcb;
+  color: #fff;
+  border-radius: 5px;
+  padding-left: 3%;
 }
 
 .room-filter {
@@ -165,13 +180,10 @@ select {
 }
 
 .grid {
-  margin-top: 20Px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
   justify-content: center;
   align-items: center;
-  height: 100%;
 }
 
 .flex {

@@ -22,7 +22,6 @@ const roomTypes = document.querySelector('.room-types')
 form.addEventListener('submit', (event) => {
   event.preventDefault()
   displayFilteredRooms()
-  hide(customerBookings)
   show(roomsSection)
 })
 
@@ -31,15 +30,10 @@ roomTypes.addEventListener('change', (event) => {
   displayRoomsByType()
 })
 
-homeButton.addEventListener('click', () => {
-  show(customerBookings)
-  hide(roomsSection)
-})
-
-roomsButton.addEventListener('click', () => {
-  hide(customerBookings)
-  show(roomsSection)
-})
+// homeButton.addEventListener('click', () => {
+//   show(customerBookings)
+//   hide(roomsSection)
+// })
 
 roomsDisplay.addEventListener('click', (event) => {
   const date = event.target.value
