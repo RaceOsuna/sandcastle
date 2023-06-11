@@ -1,5 +1,9 @@
 const getCustomerBookings = (customer, bookingData) => {
-  return bookingData.filter((booking) => booking.userID === customer.id)
+  return bookingData.filter((booking) => booking.userID === customer.id).sort((a, b) => {
+    a = new Date(a.date)
+    b = new Date(b.date)
+    return b - a
+  })
 }
 
 const getTotalAmountSpent = (customer, bookingData, roomData) => {
@@ -25,4 +29,10 @@ const filterByRoomType = (roomData, type) => {
   return roomData.filter(room => room.roomType === type)
 }
 
-export {getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType}
+const displayNoRoomsAvailableMessage = (arr) => {
+  if (!arr.length) {
+    return `Sorry! No rooms available. Please adjust your search.`
+  }
+}
+
+export {getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType, displayNoRoomsAvailableMessage}

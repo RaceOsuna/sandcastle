@@ -29,7 +29,6 @@ img {
   background-color: #397dcb;
   color: #fff;
   height: 14%;
-  /* height: 70px; */
 }
 
 nav div {
@@ -93,10 +92,6 @@ nav div {
 }
 
 .card {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 10px 10px black;
@@ -154,7 +149,6 @@ nav div {
   width: 90%;
   margin-bottom: 5%;
   margin-top: 2%;
-  /* border: 1px solid red; */
 }
 
 .room {
@@ -166,9 +160,11 @@ nav div {
 
 .room-filter {
   display: flex;
+  justify-content: space-between;
   align-self: flex-start;
+  align-items: center;
   margin: 2% 2%;
-  width: 15%
+  width: 90%;
 }
 
 select {
@@ -208,4 +204,11 @@ select {
 .invisible {
   visibility: none;
 }
-  
+
+.booked {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0fbb0f;
+  font-size: x-large;
+}

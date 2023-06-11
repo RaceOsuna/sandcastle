@@ -2,14 +2,14 @@ import chai from 'chai';
 const expect = chai.expect;
 
 
-import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType } from '../src/dataMethods';
+import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType, displayNoRoomsAvailableMessage } from '../src/dataMethods';
 
 const {mockCustomerData} = require('../src/data/mockCustomers')
 const {mockRoomData} = require('../src/data/mockRooms')
 const {mockBookingData} = require('../src/data/mockBookings')
 
 describe('Get user bookings', () => {
-  it('Should return all bookings that include the customer ID', () => {
+  it('Should return all bookings for a customer sorted from newest to oldest', () => {
     
     let customer = {
       "id": 34,
@@ -20,21 +20,21 @@ describe('Get user bookings', () => {
     
     expect(customerBookings).to.deep.equal([
       {
-        id: '5fwrgu4i7k55hl6tg',
-        userID: 34,
-        date: '2022/02/03',
-        roomNumber: 17
-      },
-      {
         id: '5fwrgu4i7k55hl79x',
         userID: 34,
         date: '2023/11/28',
         roomNumber: 9
+      },
+      {
+        id: '5fwrgu4i7k55hl6tg',
+        userID: 34,
+        date: '2022/02/03',
+        roomNumber: 17
       }
     ]);
   });
 
-  it('Should return all bookings that include a different customer ID', () => {
+  it('Should return all bookings for a different customer sorted from newest to oldest', () => {
 
     let customer = {
       "id": 9,
@@ -556,7 +556,7 @@ describe('Filter by room type', () => {
     }]);
   });
 
-  it.only("should return rooms for another selected room type", () => {
+  it("should return rooms for another selected room type", () => {
 
     const singleRoom = filterByRoomType(mockRoomData, "single room")
 
@@ -666,3 +666,14 @@ describe('Filter by room type', () => {
     }]);
   });
 });
+
+describe('No rooms available message', () => {
+  it('Should display a message if an empty array is returned', () => {
+
+    let array = []
+
+    const message = displayNoRoomsAvailableMessage(array)
+
+    expect(message).to.deep.equal(`Sorry! No rooms available. Please adjust your search.`)
+  })
+})

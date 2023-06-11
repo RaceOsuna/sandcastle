@@ -1,8 +1,12 @@
-import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType } from "./dataMethods";
+import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType, displayNoRoomsAvailableMessage } from "./dataMethods";
 import { customer, customerData, bookingData, roomData } from "./apiCalls";
-import { selectedDate, roomsDisplay, roomTypes } from "./scripts";
+import { selectedDate, roomsDisplay, roomTypes, cornerDate } from "./scripts";
 
 let allAvailableRooms = []
+
+const today = new Date().toISOString().split('T')[0].replaceAll('-', '/')
+const calander = document.getElementById('calander')
+calander.setAttribute('min', today)
 
 const hide = (element) => {
   element.classList.add('hidden')
@@ -23,7 +27,7 @@ const displayCustomerBookings = () => {
   bookings.forEach((booking) => {
     bookingsSection.innerHTML +=
     `
-    <div>
+    <div tabIndex="0">
       <p>Date: ${booking.date}</p>
       <p>Room Number: ${booking.roomNumber}</p>
     </div>
@@ -37,34 +41,18 @@ const displayTotalAmountSpent = () => {
   dollars.innerText = `ATM: $${total}`
 }
 
-// const displayAllRooms = () => {
-//   roomsDisplay.innerHTML = ''
-//   roomData.forEach((room) => {
-//     allAvailableRooms.push(room)
-//     roomsDisplay.innerHTML += 
-//     `
-//     <div class="room">
-//       <p>Room Number: ${room.number}</p>
-//       <p>Room Type: ${room.roomType}</p>
-//       <p>Bidet: ${room.bidet}</p>
-//       <p>Bed Size: ${room.bedSize}</p>
-//       <p>Beds: ${room.numBeds}</p>
-//       <p>Nightly Rate: ${room.costPerNight}</p>
-//     </div>
-//     `
-//   })
-// }
-
 const displayFilteredRooms = () => {
   allAvailableRooms = []
   roomsDisplay.innerHTML = ''
   const formattedDate = selectedDate.value.replaceAll('-', '/')
+  const dd = formattedDate.split('/').map(num => Number(num))
+  cornerDate.innerText = `${new Date(dd[0], dd[1] - 1, dd[2]).toDateString()}`
   const availableRooms = filterRoomsByDate(bookingData, roomData, formattedDate)
   availableRooms.forEach((room) => {
     allAvailableRooms.push(room)
     roomsDisplay.innerHTML += 
     `
-    <div class="room">
+    <div tabIndex="0" class="room">
       <p>Room Number: ${room.number}</p>
       <p>Room Type: ${room.roomType}</p>
       <p>Bidet: ${room.bidet}</p>
@@ -75,16 +63,20 @@ const displayFilteredRooms = () => {
     </div>
     `
   })
+  if (displayNoRoomsAvailableMessage(allAvailableRooms)) {
+    roomsDisplay.innerHTML = `${displayNoRoomsAvailableMessage(allAvailableRooms)}`
+  }
 }
 
 const displayRoomsByType = () => {
   roomsDisplay.innerHTML = ''
   const formattedDate = selectedDate.value.replaceAll('-', '/')
   const rooms = filterByRoomType(allAvailableRooms, roomTypes.value)
+  displayNoRoomsAvailableMessage(rooms)
   rooms.forEach((room) => {
     roomsDisplay.innerHTML += 
     `
-    <div class="room">
+    <div tabIndex="0" class="room">
       <p>Room Number: ${room.number}</p>
       <p>Room Type: ${room.roomType}</p>
       <p>Bidet: ${room.bidet}</p>
@@ -97,7 +89,14 @@ const displayRoomsByType = () => {
   });
 if (roomTypes.value === 'select') {
   displayFilteredRooms()
+} else if (displayNoRoomsAvailableMessage(rooms)){
+  roomsDisplay.innerHTML = `${displayNoRoomsAvailableMessage(rooms)}`
 }
 }
 
-export {displayCustomerBookings, displayTotalAmountSpent, displayCustomerName, displayFilteredRooms, displayRoomsByType, hide, show}
+const confirmBooking = () => {
+  event.target.closest('div').classList.add('booked')
+  event.target.closest('div').innerHTML = `Booked!`
+}
+
+export {displayCustomerBookings, displayTotalAmountSpent, displayCustomerName, displayFilteredRooms, displayRoomsByType, hide, show, confirmBooking}

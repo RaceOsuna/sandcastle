@@ -1,6 +1,6 @@
 import {customer, bookingData, customerData, roomData, bookRoom, getUpdatedBookings} from './apiCalls';
 
-import { displayFilteredRooms, displayRoomsByType, hide, show } from './domUpdates';
+import { displayFilteredRooms, displayRoomsByType, hide, show, confirmBooking } from './domUpdates';
 // This is the JavaScript entry file - your code begins here
 // Do not delete or rename this file ********
 
@@ -15,6 +15,7 @@ const selectedDate = document.querySelector('.date')
 const roomsDisplay = document.querySelector('.available-rooms')
 const roomsSection = document.querySelector('.available-section')
 const roomTypes = document.querySelector('.room-types')
+const cornerDate = document.querySelector('.corner-date')
 
 form.addEventListener('submit', (event) => {
   event.preventDefault()
@@ -33,9 +34,10 @@ roomsDisplay.addEventListener('click', (event) => {
   if (event.target.className === "book-button") {
     bookRoom(date, num)
     event.target.disabled = true
+    confirmBooking()
   }
   setTimeout(getUpdatedBookings, 2000)
 })
 
 
-export {selectedDate, roomsDisplay, roomTypes}
+export {selectedDate, roomsDisplay, roomTypes, cornerDate}

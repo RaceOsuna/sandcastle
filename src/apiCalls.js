@@ -1,5 +1,5 @@
 import { displayCustomerName, displayTotalAmountSpent, displayCustomerBookings, displayFilteredRooms } from "./domUpdates"
-
+import { roomTypes } from "./scripts";
 
 let customer, customerData, roomData, bookingData
 
@@ -11,6 +11,7 @@ const customersResponse = fetch('http://localhost:3001/api/v1/customers')
     return response.json();
   }
 }))
+.catch(error => alert(`${error.message}`));
 
 
 const bookingsResponse = fetch('http://localhost:3001/api/v1/bookings')
@@ -21,6 +22,7 @@ const bookingsResponse = fetch('http://localhost:3001/api/v1/bookings')
     return response.json();
   }
 }))
+.catch(error => alert(`${error.message}`));
 
 
 const roomsResponse = fetch('http://localhost:3001/api/v1/rooms')
@@ -31,6 +33,7 @@ const roomsResponse = fetch('http://localhost:3001/api/v1/rooms')
     return response.json();
   }
 }))
+.catch(error => alert(`${error.message}`));
 
 
 window.addEventListener('load', () => {
@@ -48,13 +51,16 @@ Promise.all([customersResponse, bookingsResponse, roomsResponse]).then(([custome
 
   customer = selectRandomUser(customerData);
 
-
   displayCustomerName()
   displayCustomerBookings()
   displayTotalAmountSpent()
   })
-
-  console.log(roomData)
+  
+  const today = new Date().toISOString().split('T')[0]
+  const calander = document.getElementById('calander')
+  calander.setAttribute('min', today)
+  console.log(today)
+  
   return customer;
   });
 
@@ -73,7 +79,9 @@ const bookRoom = (date, num) => {
       return response.json();
     }
   })
-  .then(data => console.log("hello"))
+  .then(data => {
+    console.log(data)
+  })
   .catch(error => alert(`${error.message}`));
 };
 
@@ -89,10 +97,11 @@ const getUpdatedBookings = () => {
   .then((response) => {
     console.log(response.bookings)
     bookingData = response.bookings
+    roomTypes.value = 'select'
     displayCustomerBookings()
     displayFilteredRooms()
   })
-  .catch(error => console.log(error.message))
+  .catch(error => alert(`${error.message}`));
 }
 
   const log = () => {console.log(customer)}
