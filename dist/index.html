@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webpack Starter Kit</title>
+  <title>Sandcastle</title>
 </head>
 <body>
   <header class="navbar">
     <div class="container flex">
-      <h1 class="logo">Sandcastle.</h1>
+      <h1 tabIndex="0" class="logo">Sandcastle.</h1>
       <nav>
         <div>
           <button class="nav-btn log-out">Log Out</button>
@@ -31,16 +31,17 @@
           <form class="booking-form">
             <h2 class="form-header">Find a Room!</h2>
             <div>
-              <input class="input date" id="calander" min="" type="date" required>
+              <label for="calander">Select a Date:<br>
+              <input class="input date" id="calander" min="" type="date" required></label>
             </div>
             <div>
-              <input class="input submit" type="submit">
+              <button class="input submit">Search</button>
             </div>
           </form>
           <div class="available-section hidden">
             <div class="room-filter conatainer">
-              <label for=""><p>Filter:</p>
-                <select class="room-types" name="filter-rooms">
+              <label for="filter-rooms">Filter:
+                <select class="room-types" name="filter-rooms" id="filter-rooms">
                   <option value="select">All Rooms</option>
                   <option>single room</option>
                   <option>junior suite</option>

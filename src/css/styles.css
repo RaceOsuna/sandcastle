@@ -26,7 +26,7 @@ img {
 }
 
 .navbar {
-  background-color: #397dcb;
+  background-color: #1a26d5;
   color: #fff;
   height: 14%;
 }
@@ -39,7 +39,7 @@ nav div {
 
 .nav-btn {
   color: white;
-  background-color: #397dcb;
+  background-color: #1a26d5;
   border: none;
   cursor: pointer;
   margin: 0 1%;
@@ -83,7 +83,7 @@ nav div {
 }
 
 .bkngs div {
-  background-color: #397dcb;
+  background-color: #1a26d5;
   margin: 5% 0%;
   border: 1px solid black;
   border-radius: 5px;
@@ -152,7 +152,7 @@ nav div {
 }
 
 .room {
-  background-color: #397dcb;
+  background-color: #1a26d5;
   color: #fff;
   border-radius: 5px;
   padding-left: 3%;
