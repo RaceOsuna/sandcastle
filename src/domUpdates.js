@@ -1,4 +1,4 @@
-import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType } from "./dataMethods";
+import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType, displayNoRoomsAvailableMessage } from "./dataMethods";
 import { customer, customerData, bookingData, roomData } from "./apiCalls";
 import { selectedDate, roomsDisplay, roomTypes } from "./scripts";
 
@@ -41,11 +41,11 @@ const displayTotalAmountSpent = () => {
   dollars.innerText = `ATM: $${total}`
 }
 
-const displayNoRoomsAvailableMessage = (arr) => {
-  if (!arr.length) {
-    roomsDisplay.innerHTML = `Sorry! No rooms available. Please adjust your search.`
-  }
-}
+// const displayNoRoomsAvailableMessage = (arr) => {
+//   if (!arr.length) {
+//     roomsDisplay.innerHTML = `Sorry! No rooms available. Please adjust your search.`
+//   }
+// }
 
 const displayFilteredRooms = () => {
   allAvailableRooms = []
@@ -67,7 +67,9 @@ const displayFilteredRooms = () => {
     </div>
     `
   })
-  displayNoRoomsAvailableMessage(allAvailableRooms)
+  if (displayNoRoomsAvailableMessage(allAvailableRooms)) {
+    roomsDisplay.innerHTML = `${displayNoRoomsAvailableMessage(allAvailableRooms)}`
+  }
 }
 
 const displayRoomsByType = () => {
@@ -91,8 +93,8 @@ const displayRoomsByType = () => {
   });
 if (roomTypes.value === 'select') {
   displayFilteredRooms()
-} else {
-  displayNoRoomsAvailableMessage
+} else if (displayNoRoomsAvailableMessage(rooms)){
+  roomsDisplay.innerHTML = `${displayNoRoomsAvailableMessage(rooms)}`
 }
 }
 

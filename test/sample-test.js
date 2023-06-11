@@ -2,7 +2,7 @@ import chai from 'chai';
 const expect = chai.expect;
 
 
-import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType } from '../src/dataMethods';
+import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType, displayNoRoomsAvailableMessage } from '../src/dataMethods';
 
 const {mockCustomerData} = require('../src/data/mockCustomers')
 const {mockRoomData} = require('../src/data/mockRooms')
@@ -556,7 +556,7 @@ describe('Filter by room type', () => {
     }]);
   });
 
-  it.only("should return rooms for another selected room type", () => {
+  it("should return rooms for another selected room type", () => {
 
     const singleRoom = filterByRoomType(mockRoomData, "single room")
 
@@ -666,3 +666,14 @@ describe('Filter by room type', () => {
     }]);
   });
 });
+
+describe('No rooms available message', () => {
+  it('Should display a message if an empty array is returned', () => {
+
+    let array = []
+
+    const message = displayNoRoomsAvailableMessage(array)
+
+    expect(message).to.deep.equal(`Sorry! No rooms available. Please adjust your search.`)
+  })
+})
