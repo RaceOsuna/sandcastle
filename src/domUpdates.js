@@ -1,12 +1,8 @@
 import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType, displayNoRoomsAvailableMessage } from "./dataMethods";
-import { customer, customerData, bookingData, roomData } from "./apiCalls";
-import { selectedDate, roomsDisplay, roomTypes, cornerDate } from "./scripts";
+import {customerData, bookingData, roomData } from "./apiCalls";
+import { selectedDate, roomsDisplay, roomTypes, cornerDate, username, password, customer } from "./scripts";
 
 let allAvailableRooms = []
-
-const today = new Date().toISOString().split('T')[0].replaceAll('-', '/')
-const calander = document.getElementById('calander')
-calander.setAttribute('min', today)
 
 const hide = (element) => {
   element.classList.add('hidden')
@@ -24,6 +20,7 @@ const displayCustomerName = () => {
 const displayCustomerBookings = () => {
   const bookings = getCustomerBookings(customer, bookingData)
   const bookingsSection = document.querySelector('.bkngs')
+  bookingsSection.innerHTML = ''
   bookings.forEach((booking) => {
     bookingsSection.innerHTML +=
     `
@@ -99,4 +96,14 @@ const confirmBooking = () => {
   event.target.closest('div').innerHTML = `Booked!`
 }
 
-export {displayCustomerBookings, displayTotalAmountSpent, displayCustomerName, displayFilteredRooms, displayRoomsByType, hide, show, confirmBooking}
+const loginCustomer = () => {
+  const userID = Number(username.value.slice(8))
+  customer = customerData.find((customer) => {
+    return customer.id === userID
+  })
+  if (username.value === `customer${customer.id}` && password.value === 'overlook21') {
+    return customer
+  }
+}
+
+export {displayCustomerBookings, displayTotalAmountSpent, displayCustomerName, displayFilteredRooms, displayRoomsByType, hide, show, confirmBooking, loginCustomer}
