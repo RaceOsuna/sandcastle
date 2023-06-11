@@ -33,8 +33,8 @@ roomsDisplay.addEventListener('click', (event) => {
   if (event.target.className === "book-button") {
     bookRoom(date, num)
     event.target.disabled = true
+    confirmBooking()
   }
-  confirmBooking()
   setTimeout(getUpdatedBookings, 2000)
 })
 
