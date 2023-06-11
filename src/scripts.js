@@ -15,6 +15,7 @@ const selectedDate = document.querySelector('.date')
 const roomsDisplay = document.querySelector('.available-rooms')
 const roomsSection = document.querySelector('.available-section')
 const roomTypes = document.querySelector('.room-types')
+const cornerDate = document.querySelector('.corner-date')
 
 form.addEventListener('submit', (event) => {
   event.preventDefault()
@@ -39,4 +40,4 @@ roomsDisplay.addEventListener('click', (event) => {
 })
 
 
-export {selectedDate, roomsDisplay, roomTypes}
+export {selectedDate, roomsDisplay, roomTypes, cornerDate}

@@ -24,9 +24,7 @@
     </div>
     <section class="user-bookings container">
       <div class="grid">
-        <div class="bkngs container">
-            <!-- bookings here -->
-        </div>
+        <div class="bkngs container"></div>
         <div class="card container">
           <form class="booking-form">
             <h2 class="form-header">Find a Room!</h2>
@@ -38,8 +36,8 @@
             </div>
           </form>
           <div class="available-section hidden">
-            <div class="room-filter">
-              <label for=""><h3>Room Type:</h3>
+            <div class="room-filter conatainer">
+              <label for=""><p>Filter:</p>
                 <select class="room-types" name="filter-rooms">
                   <option value="select">All Rooms</option>
                   <option>single room</option>
@@ -48,27 +46,14 @@
                   <option>residential suite</option>
                 </select>
               </label>
+              <p>Rooms Available</p>
+              <p class="corner-date"></p> 
             </div>
             <div class="available-rooms"></div>
           </div>
         </div>  
       </div>
     </section>
-    <!-- <section class="available-section hidden"> 
-      <div class="room-filter">
-        <label for=""><h3>Room Type:</h3>
-          <select class="room-types" name="filter-rooms">
-            <option value="select">All Rooms</option>
-            <option>single room</option>
-            <option>junior suite</option>
-            <option>suite</option>
-            <option>residential suite</option>
-          </select>
-        </label>
-      </div>
-      <div class="available-rooms">
-      </div>
-    </section> -->
   </main>
   <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->
   <script src="bundle.js"></script>
