@@ -1,6 +1,6 @@
-import {customer, bookingData, customerData, roomData, bookRoom, getUpdatedBookings} from './apiCalls';
+import {customer ,bookingData, customerData, roomData, bookRoom, getUpdatedBookings} from './apiCalls';
 
-import { displayFilteredRooms, displayRoomsByType, hide, show, confirmBooking } from './domUpdates';
+import {displayFilteredRooms, displayRoomsByType, hide, show, confirmBooking, loginCustomer, displayCustomerBookings, displayCustomerName, displayTotalAmountSpent } from './domUpdates';
 // This is the JavaScript entry file - your code begins here
 // Do not delete or rename this file ********
 
@@ -16,6 +16,23 @@ const roomsDisplay = document.querySelector('.available-rooms')
 const roomsSection = document.querySelector('.available-section')
 const roomTypes = document.querySelector('.room-types')
 const cornerDate = document.querySelector('.corner-date')
+const username = document.getElementById('username')
+const password = document.getElementById('password')
+const overlay = document.querySelector('.overlay')
+const loginButton = document.querySelector('.login-button')
+
+loginButton.addEventListener('click', (event) => {
+  event.preventDefault()
+  hide(overlay)
+  customer = loginCustomer()
+  displayCustomerName()
+  displayCustomerBookings()
+  displayTotalAmountSpent()
+  setTimeout(() => {
+    console.log(customer)
+  }, 3000);
+  return customer
+})
 
 form.addEventListener('submit', (event) => {
   event.preventDefault()
@@ -40,4 +57,4 @@ roomsDisplay.addEventListener('click', (event) => {
 })
 
 
-export {selectedDate, roomsDisplay, roomTypes, cornerDate}
+export {selectedDate, roomsDisplay, roomTypes, cornerDate, username, password, loginButton}
