@@ -1,4 +1,4 @@
-import { displayCustomerName, displayTotalAmountSpent, displayCustomerBookings, displayFilteredRooms } from "./domUpdates"
+import { displayCustomerName, displayTotalAmountSpent, displayCustomerBookings, displayFilteredRooms, confirmBooking } from "./domUpdates"
 import { roomTypes } from "./scripts";
 
 let customer, customerData, roomData, bookingData

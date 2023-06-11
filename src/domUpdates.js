@@ -98,4 +98,9 @@ if (roomTypes.value === 'select') {
 }
 }
 
-export {displayCustomerBookings, displayTotalAmountSpent, displayCustomerName, displayFilteredRooms, displayRoomsByType, hide, show}
+const confirmBooking = () => {
+  event.target.closest('div').classList.add('booked')
+  event.target.closest('div').innerHTML = `Booked!`
+}
+
+export {displayCustomerBookings, displayTotalAmountSpent, displayCustomerName, displayFilteredRooms, displayRoomsByType, hide, show, confirmBooking}

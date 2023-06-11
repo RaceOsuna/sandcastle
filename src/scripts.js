@@ -1,6 +1,6 @@
 import {customer, bookingData, customerData, roomData, bookRoom, getUpdatedBookings} from './apiCalls';
 
-import { displayFilteredRooms, displayRoomsByType, hide, show } from './domUpdates';
+import { displayFilteredRooms, displayRoomsByType, hide, show, confirmBooking } from './domUpdates';
 // This is the JavaScript entry file - your code begins here
 // Do not delete or rename this file ********
 
@@ -34,6 +34,7 @@ roomsDisplay.addEventListener('click', (event) => {
     bookRoom(date, num)
     event.target.disabled = true
   }
+  confirmBooking()
   setTimeout(getUpdatedBookings, 2000)
 })
 
