@@ -50,19 +50,6 @@ Promise.all([customersResponse, bookingsResponse, roomsResponse]).then(([custome
   
   });
 });
-  
-  // loginButton.addEventListener('click', (event) => {
-  //   event.preventDefault()
-  //   hide(overlay)
-  //   customer = loginCustomer()
-  //   displayCustomerName()
-  //   displayCustomerBookings()
-  //   displayTotalAmountSpent()
-  //   setTimeout(() => {
-  //     console.log(customer)
-  //   }, 3000);
-  //   return customer
-  // })
 
 const bookRoom = (date, num) => {
   fetch('http://localhost:3001/api/v1/bookings', {

@@ -4,11 +4,6 @@ import { selectedDate, roomsDisplay, roomTypes, cornerDate, username, password, 
 
 let allAvailableRooms = []
 
-const calander = document.getElementById('calander')
-const today = new Date().toISOString().split('T')[0].replaceAll('-', '/')
-calander.setAttribute('min', today)
-
-
 const hide = (element) => {
   element.classList.add('hidden')
 }
@@ -25,6 +20,7 @@ const displayCustomerName = () => {
 const displayCustomerBookings = () => {
   const bookings = getCustomerBookings(customer, bookingData)
   const bookingsSection = document.querySelector('.bkngs')
+  bookingsSection.innerHTML = ''
   bookings.forEach((booking) => {
     bookingsSection.innerHTML +=
     `
