@@ -1,5 +1,9 @@
 const getCustomerBookings = (customer, bookingData) => {
-  return bookingData.filter((booking) => booking.userID === customer.id)
+  return bookingData.filter((booking) => booking.userID === customer.id).sort((a, b) => {
+    a = new Date(a.date)
+    b = new Date(b.date)
+    return b - a
+  })
 }
 
 const getTotalAmountSpent = (customer, bookingData, roomData) => {

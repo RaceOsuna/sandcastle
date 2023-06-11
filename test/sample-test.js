@@ -9,7 +9,7 @@ const {mockRoomData} = require('../src/data/mockRooms')
 const {mockBookingData} = require('../src/data/mockBookings')
 
 describe('Get user bookings', () => {
-  it('Should return all bookings that include the customer ID', () => {
+  it('Should return all bookings for a customer sorted from newest to oldest', () => {
     
     let customer = {
       "id": 34,
@@ -20,21 +20,21 @@ describe('Get user bookings', () => {
     
     expect(customerBookings).to.deep.equal([
       {
-        id: '5fwrgu4i7k55hl6tg',
-        userID: 34,
-        date: '2022/02/03',
-        roomNumber: 17
-      },
-      {
         id: '5fwrgu4i7k55hl79x',
         userID: 34,
         date: '2023/11/28',
         roomNumber: 9
+      },
+      {
+        id: '5fwrgu4i7k55hl6tg',
+        userID: 34,
+        date: '2022/02/03',
+        roomNumber: 17
       }
     ]);
   });
 
-  it('Should return all bookings that include a different customer ID', () => {
+  it('Should return all bookings for a different customer sorted from newest to oldest', () => {
 
     let customer = {
       "id": 9,
