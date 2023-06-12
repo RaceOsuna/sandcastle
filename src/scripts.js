@@ -23,11 +23,15 @@ const loginButton = document.querySelector('.login-button')
 
 loginButton.addEventListener('click', (event) => {
   event.preventDefault()
-  hide(overlay)
   customer = loginCustomer()
+  if (customer) {
+  hide(overlay)
   displayCustomerName()
   displayCustomerBookings()
   displayTotalAmountSpent()
+  } else {
+  show(overlay)
+  }
   setTimeout(() => {
     console.log(customer)
   }, 3000);
