@@ -20,6 +20,7 @@ const username = document.getElementById('username')
 const password = document.getElementById('password')
 const overlay = document.querySelector('.overlay')
 const loginButton = document.querySelector('.login-button')
+const logoutButton = document.querySelector('.log-out')
 
 loginButton.addEventListener('click', (event) => {
   event.preventDefault()
@@ -55,6 +56,11 @@ roomsDisplay.addEventListener('click', (event) => {
     confirmBooking()
   }
   setTimeout(getUpdatedBookings, 2000)
+})
+
+logoutButton.addEventListener('click', () => {
+  show(overlay)
+  window.location.reload()
 })
 
 export {selectedDate, roomsDisplay, roomTypes, cornerDate, username, password, loginButton}
