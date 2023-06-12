@@ -252,3 +252,15 @@ select {
 .book-button {
   background-color: #ffcc5c;
 }
+
+.red {
+  background-color: #ff6f69;
+}
+
+.grey {
+  background-color: grey;
+}
+
+.green {
+  background-color: #0fbb0f;
+}

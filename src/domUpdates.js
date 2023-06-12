@@ -1,6 +1,6 @@
 import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType, displayNoRoomsAvailableMessage, findCustomerById } from "./dataMethods";
 import {customerData, bookingData, roomData } from "./apiCalls";
-import { selectedDate, roomsDisplay, roomTypes, cornerDate, username, password, customer } from "./scripts";
+import { selectedDate, roomsDisplay, roomTypes, dateString, username, password, customer } from "./scripts";
 
 let allAvailableRooms = []
 
@@ -43,7 +43,7 @@ const displayFilteredRooms = () => {
   roomsDisplay.innerHTML = ''
   const formattedDate = selectedDate.value.replaceAll('-', '/')
   const date = formattedDate.split('/').map(num => Number(num))
-  cornerDate.innerText = `Rooms Available: ${new Date(date[0], date[1] - 1, date[2]).toDateString()}`
+  dateString.innerText = `Rooms Available: ${new Date(date[0], date[1] - 1, date[2]).toDateString()}`
   const availableRooms = filterRoomsByDate(bookingData, roomData, formattedDate)
   availableRooms.forEach((room) => {
     allAvailableRooms.push(room)

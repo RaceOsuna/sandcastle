@@ -1,7 +1,7 @@
 import { displayCustomerName, displayTotalAmountSpent, displayCustomerBookings, displayFilteredRooms, loginCustomer} from "./domUpdates"
 import { roomTypes, loginButton, overlay, customer } from "./scripts";
 
-let customerData, roomData, bookingData
+let customerData, roomData, bookingData, today
 
 const customersResponse = fetch('http://localhost:3001/api/v1/customers')
 .then(response => response.json((response) => {
@@ -43,11 +43,9 @@ Promise.all([customersResponse, bookingsResponse, roomsResponse]).then(([custome
   bookingData = bookings.bookings
   roomData = rooms.rooms
   
-  const today = new Date().toISOString().split('T')[0]
+  today = new Date().toISOString().split('T')[0]
   const calander = document.getElementById('calander')
   calander.setAttribute('min', today)
-  console.log(today)
-  
   });
 });
 
@@ -98,5 +96,6 @@ export {
   bookingData,
   roomData,
   bookRoom,
-  getUpdatedBookings
+  getUpdatedBookings,
+  today
 }
