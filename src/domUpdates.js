@@ -19,12 +19,12 @@ const displayCustomerName = () => {
 
 const displayCustomerBookings = () => {
   const bookings = getCustomerBookings(customer, bookingData)
-  const bookingsSection = document.querySelector('.bkngs')
+  const bookingsSection = document.querySelector('.customer-bookings')
   bookingsSection.innerHTML = ''
   bookings.forEach((booking) => {
     bookingsSection.innerHTML +=
     `
-    <div tabIndex="0">
+    <div tabIndex="0" class="bkg">
       <p>Date: ${booking.date}</p>
       <p>Room Number: ${booking.roomNumber}</p>
     </div>
