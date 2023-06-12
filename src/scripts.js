@@ -1,4 +1,4 @@
-import {customer ,bookingData, customerData, roomData, bookRoom, getUpdatedBookings} from './apiCalls';
+import {customer, bookRoom, getUpdatedBookings} from './apiCalls';
 
 import {displayFilteredRooms, displayRoomsByType, hide, show, confirmBooking, loginCustomer, displayCustomerBookings, displayCustomerName, displayTotalAmountSpent } from './domUpdates';
 // This is the JavaScript entry file - your code begins here
@@ -15,7 +15,7 @@ const selectedDate = document.querySelector('.date')
 const roomsDisplay = document.querySelector('.available-rooms')
 const roomsSection = document.querySelector('.available-section')
 const roomTypes = document.querySelector('.room-types')
-const cornerDate = document.querySelector('.corner-date')
+const dateString = document.querySelector('.date-string')
 const username = document.getElementById('username')
 const password = document.getElementById('password')
 const overlay = document.querySelector('.overlay')
@@ -63,4 +63,4 @@ logoutButton.addEventListener('click', () => {
   window.location.reload()
 })
 
-export {selectedDate, roomsDisplay, roomTypes, cornerDate, username, password, loginButton}
+export {selectedDate, roomsDisplay, roomTypes, dateString, username, password, loginButton}
