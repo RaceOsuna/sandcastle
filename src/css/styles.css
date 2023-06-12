@@ -15,8 +15,6 @@ body {
 }
 
 .overlay {
-  display: flex;
-  justify-content: center;
   align-items: center;
   position: fixed;
   width: 100%;
@@ -30,9 +28,6 @@ body {
 }
 
 .login {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 30px;
   width: 50%;
@@ -55,17 +50,15 @@ body {
   background-color: white;
 }
 
-h1,
+h1 {
+  font-size: xx-large;
+}
+
 h2,
 h3 {
   font-weight: 400;
   margin: 10px 2%;
-  font-size: xx-large;
-}
-
-img {
-  height: 100%;
-  width: 100%;
+  font-size: x-large;
 }
 
 .navbar {
@@ -84,7 +77,7 @@ nav div {
   border: none;
   cursor: pointer;
   margin: 0 1%;
-  font-size: medium;
+  font-size: large;
 }
 
 .nav-btn:hover {
@@ -96,21 +89,14 @@ nav div {
   border-bottom: 2px solid rgb(179, 176, 176);
 }
 
-.dollars {
-  font-size: x-large;
-}
-
 .booking .grid {
   grid-template-columns: 35% 65%;
   height: 85vh;
 }
 
 .booking-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
   align-items: center;
+  text-align: center;
   width: 75%;
   height: 80%;
   overflow-y: scroll;
@@ -126,20 +112,15 @@ nav div {
 }
 
 .booking-list .customer-bookings {
-  /* background-color: #ff6f69; */
   margin: 5% 0%;
-  /* border: 5px solid #fff; */
   border-radius: 5px;
   width: 90% ;
 }
 
 .customer-bookings{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
   text-align: center;
-  row-gap: 20px;
+  row-gap: 30px;
 }
 
 .bkg {
@@ -158,20 +139,11 @@ nav div {
 }
 
 .card form {
-  display:flex;
-  flex-direction: column;
-  justify-content: space-between;
   text-align: center;
   margin: 2% 2%;
   gap: 10px;
   background-color: #ffcc5c;
   border-radius: 5px;
-}
-
-.form-header {
-  margin-top: 2%;
-  align-self: center;
-  font-size: xx-large;
 }
 
 .input {
@@ -192,10 +164,7 @@ nav div {
 }
 
 .available-section {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .available-rooms {
@@ -243,6 +212,12 @@ select {
   justify-content: space-between;
   align-items: center;
   height: 100%;
+}
+
+.flex-column {
+  display:flex;
+  flex-direction: column;
+  justify-content: center
 }
 
 .container {
