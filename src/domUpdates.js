@@ -35,15 +35,15 @@ const displayCustomerBookings = () => {
 const displayTotalAmountSpent = () => {
   const total = getTotalAmountSpent(customer, bookingData, roomData)
   const dollars = document.querySelector('.dollars')
-  dollars.innerText = `ATM: $${total}`
+  dollars.innerText = `Spent: $${total}`
 }
 
 const displayFilteredRooms = () => {
   allAvailableRooms = []
   roomsDisplay.innerHTML = ''
   const formattedDate = selectedDate.value.replaceAll('-', '/')
-  const dd = formattedDate.split('/').map(num => Number(num))
-  cornerDate.innerText = `${new Date(dd[0], dd[1] - 1, dd[2]).toDateString()}`
+  const date = formattedDate.split('/').map(num => Number(num))
+  cornerDate.innerText = `Rooms Available on: ${new Date(date[0], date[1] - 1, date[2]).toDateString()}`
   const availableRooms = filterRoomsByDate(bookingData, roomData, formattedDate)
   availableRooms.forEach((room) => {
     allAvailableRooms.push(room)

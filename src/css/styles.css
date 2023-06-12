@@ -55,7 +55,9 @@ body {
   background-color: white;
 }
 
-h1 {
+h1,
+h2,
+h3 {
   font-weight: 400;
   margin: 10px 2%;
   font-size: xx-large;
@@ -117,7 +119,7 @@ nav div {
   background-color: #96ceb4;
 }
 
-.booking-list h1 {
+.booking-list h3 {
   background-color: #ffcc5c;
   border-radius: 5px;
   width: 100%;

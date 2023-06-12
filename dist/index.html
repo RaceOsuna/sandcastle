@@ -27,20 +27,20 @@
   </header>
   <main>
     <div class="greeting flex">
-      <h1 tabindex="0" class="welcome"></h1>
-      <h1 tabindex="0" class="dollars"></h1>
+      <h2 tabindex="0" class="welcome"></h2>
+      <h2 tabindex="0" class="dollars"></h2>
     </div>
     <section class="booking container">
       <div class="grid">
         <div class="booking-list container">
           <div>
-            <h1>Your Bookings</h1>
+            <h3 tabindex="0">Your Bookings</h3>
           </div>
           <div class="customer-bookings"></div>
         </div>
         <div class="card container">
           <form class="booking-form">
-            <h2 class="form-header">Find a Room!</h2>
+            <h3 class="form-header">Find a Room!</h3>
             <div>
               <label for="calander">Select a Date:<br>
               <input class="input date" id="calander" min="" type="date" required></label>
@@ -51,6 +51,7 @@
           </form>
           <div class="available-section hidden">
             <div class="room-filter conatainer">
+              <p tabindex="0" class="corner-date"></p> 
               <label for="filter-rooms">Filter:
                 <select class="room-types" name="filter-rooms" id="filter-rooms">
                   <option value="select">All Rooms</option>
@@ -60,8 +61,6 @@
                   <option>residential suite</option>
                 </select>
               </label>
-              <p>Rooms Available</p>
-              <p class="corner-date"></p> 
             </div>
             <div class="available-rooms"></div>
           </div>
