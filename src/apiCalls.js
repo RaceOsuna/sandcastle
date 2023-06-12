@@ -87,6 +87,7 @@ const getUpdatedBookings = () => {
     roomTypes.value = 'select'
     displayCustomerBookings()
     displayFilteredRooms()
+    displayTotalAmountSpent()
   })
   .catch(error => alert(`${error.message}`));
 }
