@@ -2,7 +2,7 @@ import chai from 'chai';
 const expect = chai.expect;
 
 
-import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType, displayNoRoomsAvailableMessage } from '../src/dataMethods';
+import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType, displayNoRoomsAvailableMessage, findCustomerById} from '../src/dataMethods';
 
 const {mockCustomerData} = require('../src/data/mockCustomers')
 const {mockRoomData} = require('../src/data/mockRooms')
@@ -676,4 +676,37 @@ describe('No rooms available message', () => {
 
     expect(message).to.deep.equal(`Sorry! No rooms available. Please adjust your search.`)
   })
+});
+
+describe('Find customer by id', () => {
+  it('should return a customer with id equal to given id', () => {
+
+    let user = findCustomerById(mockCustomerData, 34)
+
+    expect(user).to.deep.equal({
+      "id": 34,
+      "name": "Race Osuna"
+    });
+  });
+
+  it('should return another customer with id equal to given id', () => {
+
+    let user1 = findCustomerById(mockCustomerData, 9)
+
+    expect(user1).to.deep.equal({
+      "id": 9,
+      "name": "Faustino Quitzon"
+    });
+  });
+
+  it('should return another customer with id equal to given id', () => {
+
+    let user1 = findCustomerById(mockCustomerData, 9)
+
+    expect(user1).to.deep.equal({
+      "id": 9,
+      "name": "Faustino Quitzon"
+    });
+  });
 })
+

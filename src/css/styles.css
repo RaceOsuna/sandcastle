@@ -55,7 +55,9 @@ body {
   background-color: white;
 }
 
-h1 {
+h1,
+h2,
+h3 {
   font-weight: 400;
   margin: 10px 2%;
   font-size: xx-large;
@@ -98,39 +100,50 @@ nav div {
   font-size: x-large;
 }
 
-.user-bookings .grid {
+.booking .grid {
   grid-template-columns: 35% 65%;
   height: 85vh;
 }
 
-
-.bkngs {
+.booking-list {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   align-items: center;
-  padding: 2% 2%;
-  margin: 2% 0%;
   width: 75%;
   height: 80%;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  border-top: 1px solid #bed4ea;
   box-shadow: 0 10px 10px black;
   background-color: #96ceb4;
 }
 
-.bkngs h1 {
+.booking-list h3 {
   background-color: #ffcc5c;
   border-radius: 5px;
   width: 100%;
 }
 
-.bkngs div {
-  background-color: #ff6f69;
+.booking-list .customer-bookings {
+  /* background-color: #ff6f69; */
   margin: 5% 0%;
   /* border: 5px solid #fff; */
+  border-radius: 5px;
+  width: 90% ;
+}
+
+.customer-bookings{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  row-gap: 20px;
+}
+
+.bkg {
+  background-color: #ff6f69;
   border-radius: 5px;
   width: 90% ;
 }
