@@ -101,7 +101,7 @@ const loginCustomer = () => {
   customer = customerData.find((customer) => {
     return customer.id === userID
   })
-  if (userID < 51 && username.value === `customer${customer.id}` && password.value === 'overlook21') {
+  if (customer && username.value === `customer${customer.id}` && password.value === 'overlook21') {
     return true
   } else {
     alert('Wrong username or password!')
