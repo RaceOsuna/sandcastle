@@ -24,7 +24,7 @@ const displayCustomerBookings = () => {
   bookings.forEach((booking) => {
     bookingsSection.innerHTML +=
     `
-    <div tabIndex="0" class="bkg">
+    <div tabindex="0" class="bkg">
       <p>Date: ${booking.date}</p>
       <p>Room Number: ${booking.roomNumber}</p>
     </div>
@@ -49,7 +49,7 @@ const displayFilteredRooms = () => {
     allAvailableRooms.push(room)
     roomsDisplay.innerHTML += 
     `
-    <div tabIndex="0" class="room">
+    <div tabindex="0" class="room">
       <p>Room Number: ${room.number}</p>
       <p>Room Type: ${room.roomType}</p>
       <p>Bidet: ${room.bidet}</p>
@@ -73,7 +73,7 @@ const displayRoomsByType = () => {
   rooms.forEach((room) => {
     roomsDisplay.innerHTML += 
     `
-    <div tabIndex="0" class="room">
+    <div tabindex="0" class="room">
       <p>Room Number: ${room.number}</p>
       <p>Room Type: ${room.roomType}</p>
       <p>Bidet: ${room.bidet}</p>

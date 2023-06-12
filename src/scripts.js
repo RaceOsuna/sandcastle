@@ -32,9 +32,6 @@ loginButton.addEventListener('click', (event) => {
   } else {
   show(overlay)
   }
-  setTimeout(() => {
-    console.log(customer)
-  }, 3000);
   return customer
 })
 
@@ -59,6 +56,5 @@ roomsDisplay.addEventListener('click', (event) => {
   }
   setTimeout(getUpdatedBookings, 2000)
 })
-
 
 export {selectedDate, roomsDisplay, roomTypes, cornerDate, username, password, loginButton}
