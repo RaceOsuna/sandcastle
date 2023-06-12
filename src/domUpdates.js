@@ -1,4 +1,4 @@
-import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType, displayNoRoomsAvailableMessage } from "./dataMethods";
+import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType, displayNoRoomsAvailableMessage, findCustomerById } from "./dataMethods";
 import {customerData, bookingData, roomData } from "./apiCalls";
 import { selectedDate, roomsDisplay, roomTypes, cornerDate, username, password, customer } from "./scripts";
 
@@ -43,7 +43,7 @@ const displayFilteredRooms = () => {
   roomsDisplay.innerHTML = ''
   const formattedDate = selectedDate.value.replaceAll('-', '/')
   const date = formattedDate.split('/').map(num => Number(num))
-  cornerDate.innerText = `Rooms Available on: ${new Date(date[0], date[1] - 1, date[2]).toDateString()}`
+  cornerDate.innerText = `Rooms Available: ${new Date(date[0], date[1] - 1, date[2]).toDateString()}`
   const availableRooms = filterRoomsByDate(bookingData, roomData, formattedDate)
   availableRooms.forEach((room) => {
     allAvailableRooms.push(room)
@@ -69,7 +69,7 @@ const displayRoomsByType = () => {
   roomsDisplay.innerHTML = ''
   const formattedDate = selectedDate.value.replaceAll('-', '/')
   const rooms = filterByRoomType(allAvailableRooms, roomTypes.value)
-  displayNoRoomsAvailableMessage(rooms)
+  // displayNoRoomsAvailableMessage(rooms)
   rooms.forEach((room) => {
     roomsDisplay.innerHTML += 
     `
@@ -98,9 +98,7 @@ const confirmBooking = () => {
 
 const loginCustomer = () => {
   const userID = Number(username.value.slice(8))
-  customer = customerData.find((customer) => {
-    return customer.id === userID
-  })
+  customer = findCustomerById(customerData, userID)
   if (customer && username.value === `customer${customer.id}` && password.value === 'overlook21') {
     return true
   } else {

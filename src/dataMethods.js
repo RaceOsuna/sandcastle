@@ -35,4 +35,10 @@ const displayNoRoomsAvailableMessage = (arr) => {
   }
 }
 
-export {getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType, displayNoRoomsAvailableMessage}
+const findCustomerById = (customerData, id) => {
+  return customerData.find((customer) => {
+    return customer.id === id
+  })
+}
+
+export {getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType, displayNoRoomsAvailableMessage, findCustomerById}
