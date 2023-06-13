@@ -35,10 +35,14 @@ const displayCustomerBookings = () => {
 
     bookingsSection.innerHTML +=
     `
-    <div tabindex="0" class="bkg ${color}">
-      <p>Date: ${booking.date}</p>
-      <p>Room Number: ${booking.roomNumber}</p>
-    </div>
+    <ul>
+      <li>
+        <div tabindex="0" class="bkg ${color}">
+          <p>Date: ${booking.date}</p>
+          <p>Room Number: ${booking.roomNumber}</p>
+        </div>
+      </li>
+    </ul>
     `
   })
 }

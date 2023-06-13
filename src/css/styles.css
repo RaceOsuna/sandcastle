@@ -50,6 +50,14 @@ body {
   background-color: white;
 }
 
+ul {
+  width: 90%;
+}
+
+li {
+  list-style-type: none;
+}
+
 h1 {
   font-size: xx-large;
 }
@@ -108,6 +116,7 @@ nav div {
   scroll-behavior: smooth;
   box-shadow: 0 10px 10px black;
   background: linear-gradient(90deg, rgba(1,150,139,1) 0%, rgba(120,206,226,1) 35%, rgba(0,212,255,1) 100%);
+  border-radius: 5px;
 }
 
 .booking-list h3 {
