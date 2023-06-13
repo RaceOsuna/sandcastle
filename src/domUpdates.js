@@ -26,7 +26,7 @@ const displayCustomerBookings = () => {
     let color;
 
     if (new Date(booking.date) > new Date()) {
-      color = 'red' 
+      color = 'orange' 
     } else if (new Date(booking.date).toISOString().split('T')[0] === new Date().toISOString().split('T')[0]) {
       color = 'green'
     } else {
