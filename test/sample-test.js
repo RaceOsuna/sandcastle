@@ -701,12 +701,12 @@ describe('Find customer by id', () => {
 
   it('should return another customer with id equal to given id', () => {
 
-    let user1 = findCustomerById(mockCustomerData, 9)
+    let user1 = findCustomerById(mockCustomerData, 3)
 
     expect(user1).to.deep.equal({
-      "id": 9,
-      "name": "Faustino Quitzon"
-    });
+      "id": 3,
+      "name": "Kelvin Schiller"
+      });
   });
 })
 
