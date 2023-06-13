@@ -65,7 +65,7 @@ const bookRoom = (date, num) => {
     }
   })
   .then(data => {
-    console.log(data)
+    getUpdatedBookings()
   })
   .catch(error => alert(`${error.message}`));
 };
@@ -80,7 +80,6 @@ const getUpdatedBookings = () => {
     }
   }))
   .then((response) => {
-    console.log(response.bookings)
     bookingData = response.bookings
     roomTypes.value = 'select'
     displayCustomerBookings()

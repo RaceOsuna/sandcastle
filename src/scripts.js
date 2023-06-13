@@ -55,7 +55,6 @@ roomsDisplay.addEventListener('click', (event) => {
     event.target.disabled = true
     confirmBooking()
   }
-  setTimeout(getUpdatedBookings, 2000)
 })
 
 logoutButton.addEventListener('click', () => {
