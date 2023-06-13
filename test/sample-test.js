@@ -2,7 +2,7 @@ import chai from 'chai';
 const expect = chai.expect;
 
 
-import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType, displayNoRoomsAvailableMessage, findCustomerById} from '../src/dataMethods';
+import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType, displayNoRoomsAvailableMessage, findCustomerById, formatDate} from '../src/dataMethods';
 
 const {mockCustomerData} = require('../src/data/mockCustomers')
 const {mockRoomData} = require('../src/data/mockRooms')
@@ -701,12 +701,20 @@ describe('Find customer by id', () => {
 
   it('should return another customer with id equal to given id', () => {
 
-    let user1 = findCustomerById(mockCustomerData, 9)
+    let user1 = findCustomerById(mockCustomerData, 3)
 
     expect(user1).to.deep.equal({
-      "id": 9,
-      "name": "Faustino Quitzon"
-    });
+      "id": 3,
+      "name": "Kelvin Schiller"
+      });
   });
 })
 
+describe('Format date' , () => {
+  it.only(`should replace '-'s in a date with '/'s`, () => {
+
+    const formattedDate = formatDate("2024-01-03")
+
+    expect(formattedDate).to.equal("2024/01/03")
+  });
+});

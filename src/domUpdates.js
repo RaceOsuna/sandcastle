@@ -1,4 +1,4 @@
-import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType, displayNoRoomsAvailableMessage, findCustomerById } from "./dataMethods";
+import { getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType, displayNoRoomsAvailableMessage, findCustomerById, formatDate } from "./dataMethods";
 import {customerData, bookingData, roomData } from "./apiCalls";
 import { selectedDate, roomsDisplay, roomTypes, dateString, username, password, customer } from "./scripts";
 
@@ -26,7 +26,7 @@ const displayCustomerBookings = () => {
     let color;
 
     if (new Date(booking.date) > new Date()) {
-      color = 'red' 
+      color = 'orange' 
     } else if (new Date(booking.date).toISOString().split('T')[0] === new Date().toISOString().split('T')[0]) {
       color = 'green'
     } else {
@@ -35,10 +35,14 @@ const displayCustomerBookings = () => {
 
     bookingsSection.innerHTML +=
     `
-    <div tabindex="0" class="bkg ${color}">
-      <p>Date: ${booking.date}</p>
-      <p>Room Number: ${booking.roomNumber}</p>
-    </div>
+    <ul>
+      <li>
+        <div tabindex="0" class="bkg ${color}">
+          <p>Date: ${booking.date}</p>
+          <p>Room Number: ${booking.roomNumber}</p>
+        </div>
+      </li>
+    </ul>
     `
   })
 }
@@ -52,7 +56,7 @@ const displayTotalAmountSpent = () => {
 const displayFilteredRooms = () => {
   allAvailableRooms = []
   roomsDisplay.innerHTML = ''
-  const formattedDate = selectedDate.value.replaceAll('-', '/')
+  const formattedDate = formatDate(selectedDate.value)
   const date = formattedDate.split('/').map(num => Number(num))
   dateString.innerText = `Rooms Available: ${new Date(date[0], date[1] - 1, date[2]).toDateString()}`
   const availableRooms = filterRoomsByDate(bookingData, roomData, formattedDate)
@@ -78,7 +82,7 @@ const displayFilteredRooms = () => {
 
 const displayRoomsByType = () => {
   roomsDisplay.innerHTML = ''
-  const formattedDate = selectedDate.value.replaceAll('-', '/')
+  const formattedDate = formatDate(selectedDate.value)
   const rooms = filterByRoomType(allAvailableRooms, roomTypes.value)
   // displayNoRoomsAvailableMessage(rooms)
   rooms.forEach((room) => {

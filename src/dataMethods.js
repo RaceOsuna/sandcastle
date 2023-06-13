@@ -41,4 +41,9 @@ const findCustomerById = (customerData, id) => {
   })
 }
 
-export {getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType, displayNoRoomsAvailableMessage, findCustomerById}
+const formatDate = (value) => {
+  let date = value
+  return date.replaceAll('-', '/')
+}
+
+export {getCustomerBookings, getTotalAmountSpent, filterRoomsByDate, filterByRoomType, displayNoRoomsAvailableMessage, findCustomerById, formatDate}
