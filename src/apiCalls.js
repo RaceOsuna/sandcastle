@@ -1,5 +1,5 @@
-import { displayCustomerName, displayTotalAmountSpent, displayCustomerBookings, displayFilteredRooms, loginCustomer} from "./domUpdates"
-import { roomTypes, loginButton, overlay, customer } from "./scripts";
+import {displayTotalAmountSpent, displayCustomerBookings, displayFilteredRooms} from "./domUpdates"
+import { roomTypes, customer } from "./scripts";
 
 let customerData, roomData, bookingData, today
 
